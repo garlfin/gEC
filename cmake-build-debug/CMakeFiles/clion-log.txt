@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.1/bin/ninja/win/ninja.exe" -static -G Ninja -S C:\Users\scion\CLionProjects\iME -B C:\Users\scion\CLionProjects\iME\cmake-build-debug
+CMake Error: Unknown argument -static
+CMake Error: Run 'cmake --help' for all supported options.

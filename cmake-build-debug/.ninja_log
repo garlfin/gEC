@@ -1,0 +1,13 @@
+# ninja log v5
+9	1352	6838369979301557	CMakeFiles/iME.dir/Engine/Windowing/Window.cpp.obj	4e918a7b79108052
+8	1196	6838352337436032	CMakeFiles/iME.dir/main.cpp.obj	91a13d23be766ca9
+1119	1387	6838378872178735	iME.exe	9543e06c651e8b67
+36	813	6837559807678025	CMakeFiles/iME.dir/Engine/Asset/Material/GLVAO.cpp.obj	180d0c06f0075b53
+1	251	6838386786510139	build.ninja	a39cd52d44d22474
+25	1368	6836671901722979	CMakeFiles/iME.dir/Engine/Asset/Text.cpp.obj	3479c12cf708ca1c
+16	2944	6835845209215056	CMakeFiles/iME.dir/Engine/glad.c.obj	2a024553142a625b
+8	557	6836496827527834	CMakeFiles/iME.dir/Engine/Asset/AssetManager.cpp.obj	8f4270387fdba360
+26	777	6838352333216180	CMakeFiles/iME.dir/Engine/Asset/Mesh/GLVAO.cpp.obj	634193c32fe4c938
+8	1118	6838378869575676	CMakeFiles/iME.dir/Engine/Asset/Material/SubShader.cpp.obj	6c60aed546c4377c
+16	877	6838369974545543	CMakeFiles/iME.dir/Engine/Asset/Material/Shader.cpp.obj	27f9e573a422a5d4
+29	746	6838360241150933	CMakeFiles/iME.dir/Engine/Asset/Mesh/VAO.cpp.obj	f5f7b823e9c442e4
