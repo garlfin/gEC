@@ -36,8 +36,11 @@ SubShader::SubShader(Window& window, const char* filePath, ShaderType type) : As
     int status;
     glGetShaderiv(_ID, GL_COMPILE_STATUS, &status);
     if(!status) {
-        char shaderLog[512];
-        glGetShaderInfoLog(_ID, sizeof(shaderLog), nullptr, (GLchar*) &shaderLog);
+        int logLen;
+        glGetShaderiv(id(), GL_INFO_LOG_LENGTH, &logLen);
+
+        char shaderLog[logLen];
+        glGetShaderInfoLog(_ID, sizeof(shaderLog), nullptr, (GLchar *) &shaderLog);
         std::cout << "Shader Compile Error! \n" << shaderLog << std::endl;
     }
 

@@ -5,8 +5,10 @@
 #include "Window.h"
 #include "../Asset/Mesh/VAO.h"
 #include "../Asset/Material/Shader.h"
+#include "../Struct/CameraData.h"
 #include <stdexcept>
 #include <iostream>
+#include <glm/gtc/matrix_transform.hpp>
 
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam);
@@ -52,6 +54,15 @@ void Window::Run() {
     VAO tri(*this);
     Shader diffuse(*this, "default.vert", "default.frag");
 
+    GLBuffer<CameraData> camDat(*this, 1);
+    // Free the camera data once I'm done.
+    {
+        CameraData d{glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0), glm::vec3(0, 1, 0)),
+                     glm::perspective(42.0f, (float) Size.x / Size.y, 0.1f, 300.0f)};
+        camDat.ReplaceData(&d);
+    }
+    camDat.Bind(0, BufferBindLocation::UniformBuffer);
+
     diffuse.Use();
     while (!glfwWindowShouldClose(window))
     {
@@ -65,6 +76,7 @@ void Window::Run() {
 
     tri.Free();
     diffuse.Free();
+    camDat.Free();
 
     glfwTerminate();
 }
