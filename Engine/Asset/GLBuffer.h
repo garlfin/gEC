@@ -5,6 +5,7 @@
 #ifndef IME_GLBUFFER_H
 #define IME_GLBUFFER_H
 
+#include <vector>
 #include "glad/glad.h"
 #include "Asset.h"
 
@@ -31,8 +32,8 @@ public:
         glNamedBufferStorage(_ID, _size, data, GL_DYNAMIC_STORAGE_BIT);
     }
 
-    void ReplaceData(T* data, uint32_t count = -1, uint32_t offset = 0) {
-        glNamedBufferSubData(_ID, offset, count == -1 ? _size : count * sizeof(T), data);
+    void ReplaceData(T* data, uint32_t count = 0, uint32_t offset = 0) {
+        glNamedBufferSubData(_ID, offset, count == 0 ? _size : count * sizeof(T), data);
     }
 
     void ReplaceData(std::vector<T>* data, uint32_t offset = 0) {
@@ -43,8 +44,9 @@ public:
         glBindBufferBase((GLenum) bindLocation, slot, _ID);
     }
 
-    void Free() override {
-        glDeleteBuffers(1, (GLuint*) &_ID);
+protected:
+    void Dispose() override {
+        glDeleteBuffers(1, &_ID);
     }
 };
 

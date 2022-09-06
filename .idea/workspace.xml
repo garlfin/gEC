@@ -21,7 +21,35 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Camera Shennanigans" />
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Big stuff">
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Component/Component.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Component/Component.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Component/Entity.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Struct/PVRHeader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Asset.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Asset.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Vendor/KHR/khrplatform.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Vendor/KHR/khrplatform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Vendor/glad/glad.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Vendor/glad/glad.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/glad.c" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/glad.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.vert" beforeDir="false" afterPath="$PROJECT_DIR$/default.vert" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +58,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-MinGW" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -43,8 +71,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="cpmhy9qk" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -52,46 +86,52 @@
     <option name="minorVersion" value="2.1" />
   </component>
   <component name="ProjectId" id="2E1qGSpk2ralmjSPaeKgcNipvtm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/scion/CLionProjects/iME",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "CMakeSettings",
-    "structure.view.defaults.are.configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/scion/CLionProjects/iME/cmake-build-debug-mingw&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\scion\CLionProjects\iME\cmake-build-debug-mingw" />
+      <recent name="C:\Users\scion\CLionProjects\iME\cmake-build-release" />
       <recent name="C:\Users\scion\CLionProjects\iME" />
       <recent name="C:\Users\scion\CLionProjects\iME\cmake-build-debug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\scion\CLionProjects\iME\Engine\Component" />
+      <recent name="C:\Users\scion\CLionProjects\iME" />
+      <recent name="C:\Users\scion\CLionProjects\iME\Engine\Asset\Texture" />
       <recent name="C:\Users\scion\CLionProjects\iME\Engine\Asset" />
       <recent name="C:\Users\scion\CLionProjects\iME\Engine\Asset\Mesh" />
-      <recent name="C:\Users\scion\CLionProjects\iME\Engine" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="iME" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iME" TARGET_NAME="iME" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="iME" RUN_TARGET_NAME="iME">
@@ -118,6 +158,9 @@
       <workItem from="1662128644318" duration="1729000" />
       <workItem from="1662133000358" duration="3988000" />
       <workItem from="1662163500162" duration="6474000" />
+      <workItem from="1662403303078" duration="68000" />
+      <workItem from="1662417731455" duration="4975000" />
+      <workItem from="1662467139379" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -151,12 +194,34 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Windowing/Window.cpp</url>
+          <line>60</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp</url>
+          <line>48</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp</url>
+          <line>19</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp</url>
-          <line>46</line>
-          <option name="timeStamp" value="5" />
+          <line>25</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="mipSize.x" />
+        <watch expression="tBytesRead" />
+        <watch expression="mipSize.y" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

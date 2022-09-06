@@ -8,9 +8,9 @@ layout (std140, binding = 0) uniform CameraData
     mat4 projection;
     vec3 viewPos;
     vec4 otherDat;
-} CameraData;
+} Camera;
 
 void main()
 {
-    gl_Position = CameraData.projection * CameraData.view * vec4(vPos, 1.0);
+    gl_Position = Camera.projection * Camera.view * vec4(vPos, 1.0);
 }

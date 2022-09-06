@@ -12,43 +12,41 @@ SubShader::SubShader(Window& window, const char* filePath, ShaderType type) : As
 {
     _ID = glCreateShader((GLenum) type);
 
-    std::ifstream shaderSource;
-    std::stringstream fileData;
-
+    std::ifstream shaderSource(filePath, std::ios::in | std::ios::binary);
 
     shaderSource.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 
-    try
-    {
-        shaderSource.open(filePath);
-        fileData << shaderSource.rdbuf();
-    } catch(std::ifstream ::failure exception) {
-        std::cout << "Shader read failure: " << exception.what() << std::endl;
-    }
+    shaderSource.seekg(0, shaderSource.end);
+    int32_t bytesToRead = shaderSource.tellg();
 
-    auto finalString = fileData.str();
-    const char* string = finalString.c_str();
-    //const char* finalString = fileString.c_str();
+    char* sPtr = new char[bytesToRead];
+    shaderSource.seekg(0, shaderSource.beg);
+    shaderSource.read(sPtr, bytesToRead);
 
-    glShaderSource(_ID, 1, &string, nullptr);
+    glShaderSource(_ID, 1, &sPtr, &bytesToRead);
+
+    delete[] sPtr;
+
     glCompileShader(_ID);
 
     int status;
     glGetShaderiv(_ID, GL_COMPILE_STATUS, &status);
-    if(!status) {
+    if(!status)
+    {
         int logLen;
         glGetShaderiv(id(), GL_INFO_LOG_LENGTH, &logLen);
 
         char shaderLog[logLen];
         glGetShaderInfoLog(_ID, sizeof(shaderLog), nullptr, (GLchar *) &shaderLog);
-        std::cout << "Shader Compile Error! \n" << shaderLog << std::endl;
+        std::cout << " Shader Compile Error! \n" << shaderLog << std::endl;
     }
+
 
     shaderSource.close();
 
 
 }
 
-void SubShader::Free() {
+void SubShader::Dispose() {
     glDeleteShader(_ID);
 }

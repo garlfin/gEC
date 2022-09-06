@@ -35,11 +35,22 @@ Shader::Shader(Window &window, const char* compute) : Asset(window)
     comp.Free();
 }
 
-void Shader::Use() {
+void Shader::Use() const {
     glUseProgram(_ID);
 }
 
-void Shader::Free() {
+void Shader::Dispose() {
+    _disposed = true;
     glDeleteProgram(_ID);
+}
+
+void Shader::SetUniform(uint32_t slot, const uint64_t value) const
+{
+    glProgramUniform2ui(_ID, slot, 1, value);
+}
+
+void Shader::SetUniform(uint32_t slot, int32_t value) const
+{
+    glProgramUniform1i(_ID, slot, value);
 }
 

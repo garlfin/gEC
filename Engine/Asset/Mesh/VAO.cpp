@@ -33,7 +33,7 @@ VAO::VAO(Window &window) : Asset(window), positions(window, 3, (glm::vec3*) &tri
 
 }
 
-void VAO::Free() {
+void VAO::Dispose() {
     positions.Free();
     indices.Free();
     glDeleteVertexArrays(1, (GLuint*) &_ID);

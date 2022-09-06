@@ -9,7 +9,6 @@
 #include <glfw/glfw3.h>
 #include <glm/vec2.hpp>
 #include <string>
-#include "../Asset/AssetManager.h"
 #include "../Asset/GLBuffer.h"
 
 
@@ -17,7 +16,6 @@ class Window {
 protected:
     GLFWwindow* window;
 public:
-    AssetManager<GLBuffer<float>> TextManager;
     glm::i16vec2 Size;
     std::string Title;
 

@@ -1,12 +1,12 @@
 #version 460 core
 
-#extension ARB_bindless_texture : enable
+#extension ARB_bindless_texture : require
 
-uniform uvec2 albedo;
+layout(location = 1) uniform sampler2D albedo;
 
 out vec4 FragColor;
 
 void main()
 {
-    FragColor = vec4(texture(sampler2D(albedo), gl_FragCoord.xy));
+    FragColor = vec4(texture(albedo, gl_FragCoord.xy / vec2(1280, 720)).rgb, 1);
 }
