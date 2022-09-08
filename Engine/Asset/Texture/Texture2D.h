@@ -10,7 +10,7 @@
 
 class Texture2D : public Texture {
 public:
-    Texture2D(Window& window, const char*, bool = false);
+    Texture2D(Window* window, const char*, bool = false);
 };
 
 

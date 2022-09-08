@@ -9,4 +9,5 @@ out vec4 FragColor;
 void main()
 {
     FragColor = vec4(texture(albedo, gl_FragCoord.xy / vec2(1280, 720)).rgb, 1);
+    FragColor.rgb = pow(FragColor.rgb, vec3(1 / 2.2));
 }

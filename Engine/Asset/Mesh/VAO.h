@@ -17,8 +17,8 @@ private:
 protected:
     void Dispose() override;
 public:
-    explicit VAO(Window& window);
-    void Draw(uint32_t count);
+    VAO(const Window* window);
+    void Draw(uint32_t count) const;
 };
 
 #endif //IME_VAO_H

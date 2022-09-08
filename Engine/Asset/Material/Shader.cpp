@@ -6,7 +6,7 @@
 #include "SubShader.h"
 
 
-Shader::Shader(Window &window, const char* vertex, const char* fragment) : Asset(window)
+Shader::Shader(Window* window, const char* vertex, const char* fragment) : Asset(window)
 {
     SubShader vert(window, vertex, ShaderType::Vertex);
     SubShader frag(window, fragment, ShaderType::Fragment);
@@ -22,7 +22,7 @@ Shader::Shader(Window &window, const char* vertex, const char* fragment) : Asset
     frag.Free();
 }
 
-Shader::Shader(Window &window, const char* compute) : Asset(window)
+Shader::Shader(Window* window, const char* compute) : Asset(window)
 {
     SubShader comp(window, compute, ShaderType::Compute);
 

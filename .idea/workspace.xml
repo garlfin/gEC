@@ -21,20 +21,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Big stuff">
-      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/Component.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/Component.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/Entity.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Struct/PVRHeader.h" afterDir="false" />
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="yoo45erer">
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Component/ComponentManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shelly.pvr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Asset.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Asset.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" afterDir="false" />
@@ -42,13 +37,16 @@
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Vendor/KHR/khrplatform.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Vendor/KHR/khrplatform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Vendor/glad/glad.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Vendor/glad/glad.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Component.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Component.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Component.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/glad.c" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/glad.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.vert" beforeDir="false" afterPath="$PROJECT_DIR$/default.vert" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +56,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-MinGW" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -104,7 +102,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/scion/CLionProjects/iME/cmake-build-debug-mingw&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/scion/CLionProjects/iME&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,9 +113,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\scion\CLionProjects\iME" />
       <recent name="C:\Users\scion\CLionProjects\iME\cmake-build-debug-mingw" />
       <recent name="C:\Users\scion\CLionProjects\iME\cmake-build-release" />
-      <recent name="C:\Users\scion\CLionProjects\iME" />
       <recent name="C:\Users\scion\CLionProjects\iME\cmake-build-debug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -161,6 +159,7 @@
       <workItem from="1662403303078" duration="68000" />
       <workItem from="1662417731455" duration="4975000" />
       <workItem from="1662467139379" duration="1000" />
+      <workItem from="1662469620714" duration="23149000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -195,7 +194,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Windowing/Window.cpp</url>
-          <line>60</line>
+          <line>74</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -210,8 +209,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp</url>
-          <line>25</line>
+          <line>23</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h</url>
+          <line>20</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Component/Entity.h</url>
+          <line>33</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

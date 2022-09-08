@@ -4,7 +4,7 @@
 
 #include "VAO.h"
 
-void VAO::Draw(uint32_t count) {
+void VAO::Draw(uint32_t count) const {
     glBindVertexArray(_ID);
     glDrawElementsInstanced(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr, count);
 }
@@ -19,7 +19,7 @@ const uint32_t triIndices[] {
     0, 1 , 2
 };
 
-VAO::VAO(Window &window) : Asset(window), positions(window, 3, (glm::vec3*) &triVerts), indices(window, 3, (glm::uvec3*) &triIndices)
+VAO::VAO(const Window* window) : Asset(window), positions(window, 3, (glm::vec3*) &triVerts), indices(window, 3, (glm::uvec3*) &triIndices)
 {
     glCreateVertexArrays(1, (GLuint*) &_ID);
     glVertexArrayVertexBuffer(_ID, 0, positions.id(), 0, sizeof(glm::vec3));

@@ -7,9 +7,16 @@
 #include "../Asset/Material/Shader.h"
 #include "../Struct/CameraData.h"
 #include "../Asset/Texture/Texture2D.h"
+#include "../Asset/AssetManager.h"
+#include "../Component/Entity.h"
+#include "../Component/MeshRenderer.h"
+#include "../Component/ComponentManager.h"
 #include <stdexcept>
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
+
+#define DEG_TO_RAD (std::numbers::pi / 180)
+#define RAD_TO_DEG (180 / std::numbers::pi)
 
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam);
@@ -52,37 +59,45 @@ void Window::Run() {
 
     glClearColor(0.6, 0.7, 1, 1);
 
-    VAO tri(*this);
-    Shader diffuse(*this, "../default.vert", "../default.frag");
-    Texture2D tex(*this, "../shelly.pvr");
+    Shader diffuse(this, "../default.vert", "../default.frag");
+    //Texture2D tex(this, "../shelly.pvr");
+
+    AssetManager<Texture> texManager;
+    ComponentManager<MeshRenderer> meshRendererManager;
+    Texture2D* tex = texManager.Create<Texture2D>(this, "../shelly.pvr");
+
+    Entity* test = new Entity(this);
+    test->AddComponent(meshRendererManager.Create(*test));
+
 
     diffuse.Use();
 
-    GLBuffer<CameraData> camDat(*this, 1);
+    GLBuffer<CameraData> camDat(this, 1);
     // Dispose the camera data once I'm done.
     {
         CameraData d{glm::lookAt(glm::vec3(0, 0, 2), glm::vec3(0), glm::vec3(0, 1, 0)),
-                     glm::perspective(42.0f, (float) Size.x / Size.y, 0.1f, 300.0f)};
+                     glm::perspective(50.0f * (float) DEG_TO_RAD, (float) Size.x / Size.y, 0.1f, 300.0f)};
         camDat.ReplaceData(&d);
     }
     camDat.Bind(0, BufferBindLocation::UniformBuffer);
 
-    diffuse.SetUniform(1, tex.Use(0));
+    diffuse.SetUniform(1, tex->Use(0));
 
     while (!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT);
 
-        tri.Draw(1);
+        meshRendererManager.OnRender(0);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
-    tri.Free();
     diffuse.Free();
     camDat.Free();
-    tex.Free();
+
+    texManager.Free();
+    meshRendererManager.Free(test->GetComponent<MeshRenderer>());
 
     glfwTerminate();
 }

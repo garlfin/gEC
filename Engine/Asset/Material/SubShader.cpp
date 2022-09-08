@@ -4,11 +4,9 @@
 
 #include "SubShader.h"
 #include <fstream>
-#include <sstream>
 #include <iostream>
-#include <cstring>
 
-SubShader::SubShader(Window& window, const char* filePath, ShaderType type) : Asset(window)
+SubShader::SubShader(Window* window, const char* filePath, ShaderType type) : Asset(window)
 {
     _ID = glCreateShader((GLenum) type);
 
@@ -41,10 +39,7 @@ SubShader::SubShader(Window& window, const char* filePath, ShaderType type) : As
         std::cout << " Shader Compile Error! \n" << shaderLog << std::endl;
     }
 
-
     shaderSource.close();
-
-
 }
 
 void SubShader::Dispose() {

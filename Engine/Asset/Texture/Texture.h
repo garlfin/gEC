@@ -17,7 +17,7 @@ protected:
     virtual void Dispose() override;
     static const GLenum ToInternalFormat(uint32_t);
 public:
-    Texture(Window& window);
+    Texture(Window* window);
     const glm::uvec2 size() const;
     const uint64_t handle();
     const uint16_t MipCount() const;

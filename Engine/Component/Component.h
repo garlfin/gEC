@@ -1,23 +1,30 @@
 //
-// Created by scion on 9/5/2022.
+// Created by scion on 9/7/2022.
 //
 
 #ifndef IME_COMPONENT_H
 #define IME_COMPONENT_H
 
-#include <memory>
+
+#include <cstdint>
 
 class Entity;
+class Window;
 
 class Component {
-private:
-    std::shared_ptr<Entity> _Owner;
 protected:
-    Component(std::shared_ptr<Entity> &owner) {_Owner = owner; }
-    Entity* Owner() { return _Owner.get(); }
+    Entity& mOwner;
 public:
-    void OnUpdate(double delta);
-    void OnRender(double delta);
+    Component(Entity&, uint64_t);
+    virtual void OnLoad() = 0;
+    virtual void OnUpdate(double) = 0;
+    virtual void OnRender(double) = 0;
+    virtual void OnFree() = 0;
+
+    const Window* Window();
+    const Entity* Owner();
+
+    const uint64_t TypeID;
 };
 
 

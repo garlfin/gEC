@@ -20,13 +20,13 @@ struct GLBuffer : public Asset {
 private:
     uint32_t _size;
 public:
-    GLBuffer(Window& window, uint32_t count = 0) : Asset(window), _size(sizeof(T) * count)
+    GLBuffer(const Window* window, uint32_t count = 0) : Asset(window), _size(sizeof(T) * count)
     {
         glCreateBuffers(1, (GLuint*) &_ID);
         glNamedBufferStorage(_ID, _size, nullptr, GL_DYNAMIC_STORAGE_BIT);
     }
 
-    GLBuffer(Window& window, uint32_t count, T* data) : Asset(window), _size(sizeof(T) * count)
+    GLBuffer(const Window* window, uint32_t count, T* data) : Asset(window), _size(sizeof(T) * count)
     {
         glCreateBuffers(1, (GLuint*) &_ID);
         glNamedBufferStorage(_ID, _size, data, GL_DYNAMIC_STORAGE_BIT);
