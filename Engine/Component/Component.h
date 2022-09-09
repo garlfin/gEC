@@ -7,24 +7,32 @@
 
 
 #include <cstdint>
+#include "ComponentManager.h"
 
 class Entity;
 class Window;
 
+
 class Component {
+private:
+    bool _freed;
 protected:
-    Entity& mOwner;
+    Entity* const mOwner;
+    virtual void OnFree() = 0;
 public:
-    Component(Entity&, uint64_t);
+    Component(Entity*, uint64_t);
+    virtual ~Component();
+
     virtual void OnLoad() = 0;
     virtual void OnUpdate(double) = 0;
     virtual void OnRender(double) = 0;
-    virtual void OnFree() = 0;
 
     const Window* Window();
     const Entity* Owner();
 
     const uint64_t TypeID;
+
+    void Free();
 };
 
 

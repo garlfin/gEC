@@ -17,9 +17,9 @@ protected:
     GLFWwindow* window;
 public:
     glm::i16vec2 Size;
-    std::string Title;
+    const char* const Title;
 
-    Window(glm::i16vec2, std::string const&);
+    Window(glm::i16vec2, const char*);
     // Window(uint16_t, uint16_t, std::string);
     // Window(glm::i16vec2, const char*);
 

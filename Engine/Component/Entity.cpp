@@ -12,8 +12,9 @@ void Entity::AddComponent(Component *component) {
 }
 
 void Entity::Free() {
-    for (int i = 0; i < mComponents.size(); i++) {
-        mComponents.at(i)->OnFree();
+    for (Component* mComponent : mComponents) {
+        mComponent->Free();
     }
+    mComponents.clear();
 }
 

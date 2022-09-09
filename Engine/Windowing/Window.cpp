@@ -15,13 +15,13 @@
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 
-#define DEG_TO_RAD (std::numbers::pi / 180)
+#define DEG_TO_RAD ((float) std::numbers::pi / 180)
 #define RAD_TO_DEG (180 / std::numbers::pi)
 
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam);
 
-Window::Window(glm::i16vec2 size, std::string const& title) : Size(size), Title(title)
+Window::Window(glm::i16vec2 size, const char* title) : Size(size), Title(title)
 {
     if(!glfwInit()) throw std::runtime_error("Failed to create GLFW window.");
 
@@ -30,7 +30,7 @@ Window::Window(glm::i16vec2 size, std::string const& title) : Size(size), Title(
     glfwWindowHint(GLFW_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_RESIZABLE, false);
 
-    window = glfwCreateWindow(Size.x, Size.y, Title.c_str(), nullptr, nullptr);
+    window = glfwCreateWindow(Size.x, Size.y, title, nullptr, nullptr);
 
     if(window == nullptr)
     {
@@ -67,16 +67,14 @@ void Window::Run() {
     Texture2D* tex = texManager.Create<Texture2D>(this, "../shelly.pvr");
 
     Entity* test = new Entity(this);
-    test->AddComponent(meshRendererManager.Create(*test));
-
+    test->AddComponent(meshRendererManager.Create<MeshRenderer>(test));
 
     diffuse.Use();
 
     GLBuffer<CameraData> camDat(this, 1);
-    // Dispose the camera data once I'm done.
     {
         CameraData d{glm::lookAt(glm::vec3(0, 0, 2), glm::vec3(0), glm::vec3(0, 1, 0)),
-                     glm::perspective(50.0f * (float) DEG_TO_RAD, (float) Size.x / Size.y, 0.1f, 300.0f)};
+                     glm::perspective(50.0f * DEG_TO_RAD, (float) Size.x / Size.y, 0.1f, 300.0f)};
         camDat.ReplaceData(&d);
     }
     camDat.Bind(0, BufferBindLocation::UniformBuffer);
@@ -95,9 +93,14 @@ void Window::Run() {
 
     diffuse.Free();
     camDat.Free();
-
     texManager.Free();
-    meshRendererManager.Free(test->GetComponent<MeshRenderer>());
+
+    Entity* entity = new Entity(this);
+    MeshRenderer* ptr = new MeshRenderer(entity);
+    entity->AddComponent(ptr);
+
+    delete ptr;
+
 
     glfwTerminate();
 }

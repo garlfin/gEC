@@ -21,32 +21,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="yoo45erer">
-      <change afterPath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/ComponentManager.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelly.pvr" afterDir="false" />
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Component and AssetManager addition">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Asset.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Asset.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Component.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Component.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Component.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/ComponentManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/ComponentManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/MeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +42,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-MinGW" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -127,11 +113,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="iME" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iME" TARGET_NAME="iME" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="iME" RUN_TARGET_NAME="iME">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -159,7 +140,8 @@
       <workItem from="1662403303078" duration="68000" />
       <workItem from="1662417731455" duration="4975000" />
       <workItem from="1662467139379" duration="1000" />
-      <workItem from="1662469620714" duration="23149000" />
+      <workItem from="1662469620714" duration="30334000" />
+      <workItem from="1662722783621" duration="8066000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -168,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662204922412</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Component and AssetManager addition">
+      <created>1662651900985</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662651900985</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,16 +176,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Camera Shennanigans" />
-    <option name="LAST_COMMIT_MESSAGE" value="Camera Shennanigans" />
+    <MESSAGE value="Component and AssetManager addition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Component and AssetManager addition" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Windowing/Window.cpp</url>
-          <line>74</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp</url>
           <line>48</line>
@@ -208,29 +193,22 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp</url>
-          <line>23</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h</url>
           <line>20</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Component/Entity.h</url>
-          <line>33</line>
+          <line>35</line>
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Component/ComponentManager.h</url>
+          <line>47</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="mipSize.x" />
-        <watch expression="tBytesRead" />
-        <watch expression="mipSize.y" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

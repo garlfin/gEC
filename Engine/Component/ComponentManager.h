@@ -7,7 +7,6 @@
 
 #include <vector>
 #include <iostream>
-#include "Component.h"
 
 template<typename T>
 class ComponentManager {
@@ -16,16 +15,15 @@ class ComponentManager {
 
 public:
     ComponentManager() : components(), initQueue() {
-        static_assert(std::is_base_of<Component, T>::value, "Component manager must manage an inheritor of Component");
     }
 
-    template<typename ... Args>
-    T* Create(Args&& ... args)
+    template<typename I, typename ... Args>
+    I* Create(Args&& ... args)
     {
-        T* ptr = new T(std::forward<Args>(args)...);
+        I* ptr = new I(std::forward<Args>(args)...);
         components.push_back(ptr);
         initQueue.push_back(ptr);
-        return components.at(components.size() - 1);
+        return ptr;
     }
 
     void OnRender(double delta) { for (T* component : components) component->OnRender(delta); }
@@ -35,17 +33,25 @@ public:
         initQueue.clear();
         for (T* component : components) { component->OnUpdate(delta); }
     }
+
     void Free(T* object)
     {
-        if(!std::count(components.begin(), components.end(), object))
+        auto pos = std::find(components.begin(), components.end(), object);
+        if(pos == components.end())
         {
             std::cout << "Attempt to delete non-managed Component" << std::endl;
             return;
         }
 
-        object->OnFree();
-        std::remove(components.begin(), components.end(), object);
-        delete object;
+        object->Free();
+        components.erase(pos);
+        delete object; // Problem Line
+    }
+
+    void Free() {
+        for (T* component : components) { component->OnFree(); delete component; }
+        components.clear();
+        std::destroy(components.begin(), components.end());
     }
 };
 

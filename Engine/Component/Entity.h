@@ -7,6 +7,7 @@
 
 #include <memory>
 #include <vector>
+#include <iostream>
 #include "Component.h"
 
 class Window;
@@ -27,6 +28,7 @@ public:
     T* GetComponent() {
         uint64_t hashCode = typeid(T).hash_code();
         for (Component* component : mComponents) if (component->TypeID == hashCode) return (T*) component;
+        std::cout << "Failed to find component " << typeid(T).name() << std::endl;
         return nullptr;
     };
 
