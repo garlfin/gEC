@@ -14,9 +14,13 @@
 #include <stdexcept>
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
+#include <numbers>
+#include <Windows.h>
 
 #define DEG_TO_RAD ((float) std::numbers::pi / 180)
 #define RAD_TO_DEG (180 / std::numbers::pi)
+
+//extern "C" __declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
 
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam);
@@ -59,12 +63,12 @@ void Window::Run() {
 
     glClearColor(0.6, 0.7, 1, 1);
 
-    Shader diffuse(this, "../default.vert", "../default.frag");
+    Shader diffuse(this, "default.vert", "default.frag");
     //Texture2D tex(this, "../shelly.pvr");
 
     AssetManager<Texture> texManager;
     ComponentManager<MeshRenderer> meshRendererManager;
-    Texture2D* tex = texManager.Create<Texture2D>(this, "../shelly.pvr");
+    Texture2D* tex = texManager.Create<Texture2D>(this, "shelly.pvr");
 
     Entity* test = new Entity(this);
     test->AddComponent(meshRendererManager.Create<MeshRenderer>(test));

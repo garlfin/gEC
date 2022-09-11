@@ -4,6 +4,7 @@
 
 #include "Texture.h"
 #include "math.h"
+#include <algorithm>
 
 Texture::Texture(Window* window) : Asset(window), _handle(0) {
 }

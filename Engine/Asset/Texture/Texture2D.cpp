@@ -9,13 +9,13 @@
 #include "../../Struct/PVRHeader.h"
 #include <iostream>
 
-
 Texture2D::Texture2D(Window* window, const char *path, bool genMips ) : Texture(window)
 {
     std::ifstream file(path, std::ios::in | std::ios::binary);
     if (!file.is_open())
     {
-        throw std::runtime_error("Failed to open file");
+        std::string errMsg = "Failed to load file: " + static_cast<std::string>(path);
+        throw std::runtime_error(errMsg);
     }
 
     PVRHeader pvrHeader;

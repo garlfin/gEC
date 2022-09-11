@@ -1,6 +1,6 @@
 #version 460 core
 
-#extension ARB_bindless_texture : require
+#extension ARB_bindless_texture : enable
 
 layout(location = 1) uniform sampler2D albedo;
 
