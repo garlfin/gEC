@@ -2,3 +2,14 @@
 /cmake-build-debug-mingw/
 /cmake-build-release/
 /cmake-build-debug/
+.vs/
+*.vcxproj
+*.exe
+Debug/
+CMakeFiles/
+iME.dir/
+*.cmake
+*.filters
+*.user
+*.sln
+CMakeCache.txt
