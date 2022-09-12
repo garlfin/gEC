@@ -5,13 +5,9 @@
 #include "Texture.h"
 #include "math.h"
 
-Texture::Texture(Window* window) : Asset(window), _handle(0) {
-}
+Texture::Texture(Window* window) : Asset(window), _handle(0) {}
 
-
-const glm::uvec2 Texture::size() const {
-    return _size;
-}
+const glm::uvec2 Texture::size() const { return _size; }
 
 const uint64_t Texture::handle() {
     if (_handle == 0)
@@ -36,7 +32,7 @@ const int32_t Texture::Use(int32_t slot) const {
 }
 
 Texture::~Texture() {
-    glMakeTextureHandleNonResidentARB(_handle);
+    if(_handle != 0) glMakeTextureHandleNonResidentARB(_handle);
     glDeleteTextures(1, &_ID);
 }
 

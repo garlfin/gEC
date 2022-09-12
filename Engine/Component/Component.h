@@ -30,7 +30,7 @@ public:
 
     const uint64_t TypeID;
 
-    void Invalidate() {mOwner = nullptr; }
+    void Invalidate() { mOwner = nullptr; }
 };
 
 

@@ -79,7 +79,7 @@ void Window::Run() {
     }
     camDat.Bind(0, BufferBindLocation::UniformBuffer);
 
-    diffuse.SetUniform(1, tex->Use(0));
+    diffuse.SetUniform(1, tex->handle());
 
     while (!glfwWindowShouldClose(window))
     {

@@ -18,9 +18,7 @@ void MeshRenderer::OnRender(double d) {
 
 }
 
-void MeshRenderer::OnFree() {
-    std::cout << mOwner << std::endl;
-}
+void MeshRenderer::OnFree() { }
 
 MeshRenderer::MeshRenderer(Entity* owner) : Component(owner, typeid(MeshRenderer).hash_code()), renderer(owner->Window()) {
 }

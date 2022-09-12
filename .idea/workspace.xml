@@ -23,25 +23,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Big stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Asset.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Asset.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Component.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Component.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/ComponentManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/ComponentManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/MeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,11 +186,6 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp</url>
-          <line>19</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h</url>
           <line>19</line>
           <option name="timeStamp" value="41" />
@@ -212,11 +194,6 @@
           <url>file://$PROJECT_DIR$/Engine/Component/Entity.h</url>
           <line>39</line>
           <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp</url>
-          <line>38</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

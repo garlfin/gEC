@@ -37,7 +37,7 @@ void Shader::Use() const {
 
 void Shader::SetUniform(uint32_t slot, const uint64_t value) const
 {
-    glProgramUniform2ui(_ID, slot, 1, value);
+    glProgramUniform2uiv(_ID, slot, 1, (GLuint*) &value);
 }
 
 void Shader::SetUniform(uint32_t slot, int32_t value) const
