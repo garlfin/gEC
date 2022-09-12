@@ -10,11 +10,12 @@
 #include <glm/vec2.hpp>
 
 class Shader : public Asset {
-protected:
-    void Dispose() override;
 public:
     Shader(Window* window, const char*, const char*); // Vertex, Fragment
     Shader(Window* window, const char*); // Compute
+
+    ~Shader();
+
     void Use() const;
 
     void SetUniform(uint32_t, uint64_t) const;

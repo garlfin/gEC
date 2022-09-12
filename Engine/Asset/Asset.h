@@ -11,18 +11,17 @@ class Window;
 
 class Asset {
 protected:
+    Asset(const Window* window) : _Window(window) {  }
+
     const Window* _Window;
     std::uint32_t _ID;
-    Asset(const Window* window) : _Window(window) {  }
-    bool _disposed;
-    virtual void Dispose() = 0;
 public:
-    void Free() { if(_disposed) return; _disposed = true; Dispose(); };
-    const std::int32_t id() const { return _ID; }
-    virtual ~Asset(){ Free(); }
-
     Asset(const Asset&) = delete;
     Asset& operator= (const Asset&) = delete;
+
+    virtual ~Asset() { }
+
+    const std::int32_t id() const { return _ID; }
 };
 
 

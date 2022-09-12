@@ -16,10 +16,9 @@ enum class ShaderType {
 };
 
 class SubShader : public Asset {
-protected:
-    void Dispose() override;
 public:
     SubShader(Window* window, const char*, ShaderType);
+    ~SubShader();
 };
 
 

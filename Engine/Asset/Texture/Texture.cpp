@@ -22,13 +22,6 @@ const uint64_t Texture::handle() {
     return _handle;
 }
 
-void Texture::Dispose()
-{
-    _disposed = true;
-    glMakeTextureHandleNonResidentARB(_handle);
-    glDeleteTextures(1, (GLuint*) &_ID);
-}
-
 const uint16_t Texture::MipCount() const {
     return (uint16_t) log2(std::min(_size.x, _size.y)) + 1;
 }
@@ -42,10 +35,14 @@ const int32_t Texture::Use(int32_t slot) const {
     return slot;
 }
 
+Texture::~Texture() {
+    glMakeTextureHandleNonResidentARB(_handle);
+    glDeleteTextures(1, &_ID);
+}
+
 #define PVR_BC1 7
 #define PVR_BC2 9
 #define PVR_BC3 11
-
 
 const GLenum Texture::ToInternalFormat(uint32_t format) {
     switch(format) {
@@ -57,3 +54,4 @@ const GLenum Texture::ToInternalFormat(uint32_t format) {
         default: return 0;
     }
 }
+

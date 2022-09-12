@@ -9,22 +9,12 @@ Component::Component(Entity* owner, uint64_t typeID) : mOwner(owner), TypeID(typ
 {
 }
 
-const Entity *Component::Owner() {
+Entity * const Component::Owner() {
     return mOwner;
 }
 
-const Window *Component::Window() {
+ Window * const Component::Window() {
     return mOwner->Window();
 }
 
-Component::~Component() {
-    Free();
-}
-
-void Component::Free()
-{
-    if(_freed) return;
-    _freed = true;
-
-    OnFree();
-}
+Component::~Component() { }

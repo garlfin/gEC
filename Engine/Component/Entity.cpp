@@ -11,10 +11,18 @@ void Entity::AddComponent(Component *component) {
     mComponents.push_back(component);
 }
 
-void Entity::Free() {
-    for (Component* mComponent : mComponents) {
-        mComponent->Free();
+Entity::~Entity() {
+    for (Component* mComponent : mComponents)
+    {
+        mComponent->OnFree();
+        mComponent->Invalidate();
     }
     mComponents.clear();
 }
 
+void Entity::RemoveComponent(Component *t) {
+    auto loc = std::find(mComponents.begin(), mComponents.end(), t);
+    if (loc == mComponents.end()) return;
+    mComponents.erase(loc);
+    t->Invalidate();
+}

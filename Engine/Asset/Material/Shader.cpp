@@ -17,9 +17,6 @@ Shader::Shader(Window* window, const char* vertex, const char* fragment) : Asset
     glAttachShader(_ID, frag.id());
 
     glLinkProgram(_ID);
-
-    vert.Free();
-    frag.Free();
 }
 
 Shader::Shader(Window* window, const char* compute) : Asset(window)
@@ -31,18 +28,12 @@ Shader::Shader(Window* window, const char* compute) : Asset(window)
     glAttachShader(_ID, comp.id());
 
     glLinkProgram(_ID);
-
-    comp.Free();
 }
 
 void Shader::Use() const {
     glUseProgram(_ID);
 }
 
-void Shader::Dispose() {
-    _disposed = true;
-    glDeleteProgram(_ID);
-}
 
 void Shader::SetUniform(uint32_t slot, const uint64_t value) const
 {
@@ -52,5 +43,9 @@ void Shader::SetUniform(uint32_t slot, const uint64_t value) const
 void Shader::SetUniform(uint32_t slot, int32_t value) const
 {
     glProgramUniform1i(_ID, slot, value);
+}
+
+Shader::~Shader() {
+    glDeleteProgram(_ID);
 }
 

@@ -43,15 +43,26 @@ public:
             return;
         }
 
-        object->Free();
+        if (object->Owner()) { object->OnFree(); object->Owner()->RemoveComponent(object);  }
         components.erase(pos);
-        delete object; // Problem Line
+        delete object;
     }
 
-    void Free() {
-        for (T* component : components) { component->OnFree(); delete component; }
+    void Free()
+    {
+        for (int i = 0; i < components.size(); i++)
+        {
+            T* component = components.at(i);
+
+            if (component->Owner())
+            {
+                component->OnFree();
+                component->Owner()->RemoveComponent(component);
+            }
+            delete component;
+        }
+
         components.clear();
-        std::destroy(components.begin(), components.end());
     }
 };
 

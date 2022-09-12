@@ -23,7 +23,11 @@ public:
         return t;
     }
 
-    void Free() { for (unsigned int i = 0; i < assets.size(); i++) { assets.at(i)->Free(); delete assets.at(i); } assets.clear(); }
+    void Free()
+    {
+        for (auto* at : assets) delete at;
+        assets.clear();
+    }
     void Free(T* object) { std::find(assets.begin(), assets.end(), object)->Free(); delete object; }
 
 };

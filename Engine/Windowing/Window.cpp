@@ -91,16 +91,9 @@ void Window::Run() {
         glfwPollEvents();
     }
 
-    diffuse.Free();
-    camDat.Free();
+    delete test;
+    meshRendererManager.Free();
     texManager.Free();
-
-    Entity* entity = new Entity(this);
-    MeshRenderer* ptr = new MeshRenderer(entity);
-    entity->AddComponent(ptr);
-
-    delete ptr;
-
 
     glfwTerminate();
 }

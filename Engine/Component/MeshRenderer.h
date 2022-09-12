@@ -14,15 +14,17 @@
 class MeshRenderer : public Component {
 private:
     VAO renderer;
-protected:
-    void OnFree() override;
 public:
     MeshRenderer(Entity* owner);
+    ~MeshRenderer();
+
     void OnLoad() override;
 
     void OnUpdate(double d) override;
 
     void OnRender(double d) override;
+
+    void OnFree() override;
 };
 
 

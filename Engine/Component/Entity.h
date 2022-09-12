@@ -15,12 +15,14 @@ class Window;
 class Entity final {
 private:
     std::vector<Component*> mComponents;
-    const Entity* mParent;
-    const Window* mWindow;
+    Entity* const mParent;
+    Window* const mWindow;
 public:
     Entity(Window*, Entity* = nullptr);
-    const Window* Window() { return mWindow; }
-    const Entity* Parent() { return mParent; }
+    ~Entity();
+
+    Window* const Window() { return mWindow; }
+    Entity* const Parent() { return mParent; }
 
     void AddComponent(Component*);
 
@@ -31,6 +33,8 @@ public:
         std::cout << "Failed to find component " << typeid(T).name() << std::endl;
         return nullptr;
     };
+
+    void RemoveComponent(Component*);
 
     void Free();
 };

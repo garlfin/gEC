@@ -14,11 +14,8 @@ class Window;
 
 
 class Component {
-private:
-    bool _freed;
 protected:
-    Entity* const mOwner;
-    virtual void OnFree() = 0;
+    Entity* mOwner;
 public:
     Component(Entity*, uint64_t);
     virtual ~Component();
@@ -26,13 +23,14 @@ public:
     virtual void OnLoad() = 0;
     virtual void OnUpdate(double) = 0;
     virtual void OnRender(double) = 0;
+    virtual void OnFree() = 0;
 
-    const Window* Window();
-    const Entity* Owner();
+    Window* const Window();
+    Entity* const Owner();
 
     const uint64_t TypeID;
 
-    void Free();
+    void Invalidate() {mOwner = nullptr; }
 };
 
 

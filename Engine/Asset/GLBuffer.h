@@ -26,6 +26,8 @@ public:
         glNamedBufferStorage(_ID, _size, nullptr, GL_DYNAMIC_STORAGE_BIT);
     }
 
+    ~GLBuffer() { glDeleteBuffers(1, &_ID); }
+
     GLBuffer(const Window* window, uint32_t count, T* data) : Asset(window), _size(sizeof(T) * count)
     {
         glCreateBuffers(1, (GLuint*) &_ID);
@@ -42,11 +44,6 @@ public:
 
     void Bind(uint32_t slot, BufferBindLocation bindLocation) {
         glBindBufferBase((GLenum) bindLocation, slot, _ID);
-    }
-
-protected:
-    void Dispose() override {
-        glDeleteBuffers(1, &_ID);
     }
 };
 

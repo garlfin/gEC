@@ -14,10 +14,9 @@ struct VAO : public Asset {
 private:
     GLBuffer<glm::vec3> positions;
     GLBuffer<glm::uvec3> indices;
-protected:
-    void Dispose() override;
 public:
     VAO(const Window* window);
+    ~VAO();
     void Draw(uint32_t count) const;
 };
 
