@@ -8,6 +8,7 @@
 #include <glad/glad.h>
 #include <string>
 #include "../Asset.h"
+#include "ShaderManager.h"
 
 enum class ShaderType {
     Fragment = GL_FRAGMENT_SHADER,
@@ -17,7 +18,7 @@ enum class ShaderType {
 
 class SubShader : public Asset {
 public:
-    SubShader(Window* window, const char*, ShaderType);
+    SubShader(Window *window, const char *filePath, ShaderType type, ShaderManager *sManager);
     ~SubShader();
 };
 

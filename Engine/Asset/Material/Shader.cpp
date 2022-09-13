@@ -4,12 +4,12 @@
 
 #include "Shader.h"
 #include "SubShader.h"
+#include "ShaderManager.h"
 
-
-Shader::Shader(Window* window, const char* vertex, const char* fragment) : Asset(window)
+Shader::Shader(Window* window, const char* vertex, const char* fragment, ShaderManager* sMan) : Asset(window)
 {
-    SubShader vert(window, vertex, ShaderType::Vertex);
-    SubShader frag(window, fragment, ShaderType::Fragment);
+    SubShader vert(window, vertex, ShaderType::Vertex, sMan);
+    SubShader frag(window, fragment, ShaderType::Fragment, sMan);
 
     _ID = glCreateProgram();
 
@@ -19,9 +19,9 @@ Shader::Shader(Window* window, const char* vertex, const char* fragment) : Asset
     glLinkProgram(_ID);
 }
 
-Shader::Shader(Window* window, const char* compute) : Asset(window)
+Shader::Shader(Window* window, const char* compute, ShaderManager* sMan) : Asset(window)
 {
-    SubShader comp(window, compute, ShaderType::Compute);
+    SubShader comp(window, compute, ShaderType::Compute, sMan);
 
     _ID = glCreateProgram();
 

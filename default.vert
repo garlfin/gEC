@@ -1,5 +1,7 @@
 #version 460 core
 
+#include "../include.glsl"
+
 layout (location = 0) in vec3 vPos;
 
 layout (std140, binding = 0) uniform CameraData

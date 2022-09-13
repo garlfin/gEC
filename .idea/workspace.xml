@@ -21,14 +21,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Big stuff">
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Bindless textures">
+      <change afterPath="$PROJECT_DIR$/.clang-tidy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Material/ShaderManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Material/ShaderManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.vert" beforeDir="false" afterPath="$PROJECT_DIR$/default.vert" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +114,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="iME" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iME" TARGET_NAME="iME" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="iME" RUN_TARGET_NAME="iME">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -140,6 +151,7 @@
       <workItem from="1662766166031" duration="914000" />
       <workItem from="1662820883384" duration="4461000" />
       <workItem from="1662980273492" duration="2000" />
+      <workItem from="1662993415156" duration="16775000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -155,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662651900985</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bindless textures">
+      <created>1662985965692</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662985965692</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,16 +194,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Camera Shennanigans" />
     <MESSAGE value="Component and AssetManager addition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Component and AssetManager addition" />
+    <MESSAGE value="Bindless textures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bindless textures" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp</url>
-          <line>39</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h</url>
           <line>19</line>
@@ -194,6 +209,16 @@
           <url>file://$PROJECT_DIR$/Engine/Component/Entity.h</url>
           <line>39</line>
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Asset/Material/Shader.h</url>
+          <line>15</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp</url>
+          <line>69</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -11,6 +11,7 @@
 #include "../Component/Entity.h"
 #include "../Component/MeshRenderer.h"
 #include "../Component/ComponentManager.h"
+#include "../Asset/Material/ShaderManager.h"
 #include <stdexcept>
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
@@ -23,12 +24,14 @@ static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLs
 
 Window::Window(glm::i16vec2 size, const char* title) : Size(size), Title(title)
 {
-    if(!glfwInit()) throw std::runtime_error("Failed to create GLFW window.");
+    if(!glfwInit()) throw std::runtime_error("Failed to create GLFW context.");
 
     glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
     glfwWindowHint(GLFW_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_VERSION_MINOR, 6);
+    //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_RESIZABLE, false);
+
 
     window = glfwCreateWindow(Size.x, Size.y, title, nullptr, nullptr);
 
@@ -59,17 +62,19 @@ void Window::Run() {
 
     glClearColor(0.6, 0.7, 1, 1);
 
-    Shader diffuse(this, "../default.vert", "../default.frag");
-    //Texture2D tex(this, "../shelly.pvr");
+    ComponentManager<MeshRenderer> meshRendererManager;
 
     AssetManager<Texture> texManager;
-    ComponentManager<MeshRenderer> meshRendererManager;
     Texture2D* tex = texManager.Create<Texture2D>(this, "../shelly.pvr");
+
+    ShaderManager shaderManager;
+    shaderManager.AddInclude("../include.glsl");
+    Shader* diffuse = shaderManager.Create<Shader>(this, "../default.vert", "../default.frag", &shaderManager);
 
     Entity* test = new Entity(this);
     test->AddComponent(meshRendererManager.Create<MeshRenderer>(test));
 
-    diffuse.Use();
+    diffuse->Use();
 
     GLBuffer<CameraData> camDat(this, 1);
     {
@@ -79,7 +84,7 @@ void Window::Run() {
     }
     camDat.Bind(0, BufferBindLocation::UniformBuffer);
 
-    diffuse.SetUniform(1, tex->handle());
+    diffuse->SetUniform(1, tex->handle());
 
     while (!glfwWindowShouldClose(window))
     {
@@ -92,8 +97,10 @@ void Window::Run() {
     }
 
     delete test;
+
     meshRendererManager.Free();
     texManager.Free();
+    shaderManager.Free();
 
     glfwTerminate();
 }

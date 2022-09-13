@@ -9,10 +9,12 @@
 #include "../Asset.h"
 #include <glm/vec2.hpp>
 
+class ShaderManager;
+
 class Shader : public Asset {
 public:
-    Shader(Window* window, const char*, const char*); // Vertex, Fragment
-    Shader(Window* window, const char*); // Compute
+    Shader(Window* window, const char*, const char*, ShaderManager* = nullptr); // Vertex, Fragment
+    Shader(Window* window, const char*, ShaderManager* = nullptr); // Compute
 
     ~Shader();
 
