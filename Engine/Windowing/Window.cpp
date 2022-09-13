@@ -10,15 +10,12 @@
 #include "../Asset/AssetManager.h"
 #include "../Component/Entity.h"
 #include "../Component/MeshRenderer.h"
-#include "../Component/ComponentManager.h"
 #include "../Asset/Material/ShaderManager.h"
 #include <stdexcept>
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
-
-#define DEG_TO_RAD ((float) std::numbers::pi / 180)
-#define RAD_TO_DEG (180 / std::numbers::pi)
-
+#include "../Misc/Math.h"
+#include "../Component/Transform.h"
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam);
 
@@ -60,9 +57,10 @@ void Window::Run() {
 
     glViewport(0, 0, Size.x, Size.y);
 
-    glClearColor(0.6, 0.7, 1, 1);
+    glClearColor(0, 0, 0, 1);
 
     ComponentManager<MeshRenderer> meshRendererManager;
+    ComponentManager<Transform> transformManager;
 
     AssetManager<Texture> texManager;
     Texture2D* tex = texManager.Create<Texture2D>(this, "../shelly.pvr");
@@ -73,6 +71,7 @@ void Window::Run() {
 
     Entity* test = new Entity(this);
     test->AddComponent(meshRendererManager.Create<MeshRenderer>(test));
+    test->AddComponent(transformManager.Create<Transform>(test));
 
     diffuse->Use();
 
@@ -88,8 +87,6 @@ void Window::Run() {
 
     while (!glfwWindowShouldClose(window))
     {
-        glClear(GL_COLOR_BUFFER_BIT);
-
         meshRendererManager.OnRender(0);
 
         glfwSwapBuffers(window);
