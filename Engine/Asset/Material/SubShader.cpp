@@ -14,7 +14,7 @@ SubShader::SubShader(Window *window, const char *filePath, ShaderType type, Shad
 
     std::ifstream shaderSource(filePath, std::ios::in | std::ios::binary);
 
-    shaderSource.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    if(!shaderSource.is_open()) throw std::runtime_error("File failed to open");
 
     shaderSource.seekg(0, shaderSource.end);
     int32_t bytesToRead = shaderSource.tellg();

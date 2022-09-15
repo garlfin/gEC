@@ -5,8 +5,8 @@
 #ifndef IME_TRANSFORM_H
 #define IME_TRANSFORM_H
 
-#include <glm/vec3.hpp>
-#include <glm/mat4x4.hpp>
+#include "glm/vec3.hpp"
+#include "glm/mat4x4.hpp"
 #include "Component.h"
 
 struct Transformation;
@@ -15,7 +15,10 @@ class Transform : public Component {
 public:
     Transform(Entity*, const Transformation *const = nullptr);
 
-    glm::vec3 Location;
+    union {
+        glm::vec3 Location;
+        glm::vec3 Position;
+    };
     glm::vec3 Rotation;
     glm::vec3 Scale;
 

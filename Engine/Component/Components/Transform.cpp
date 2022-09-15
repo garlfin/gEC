@@ -3,10 +3,10 @@
 //
 
 #include "Transform.h"
-#include <glm/ext/matrix_transform.hpp>
-#include <glm/matrix.hpp>
-#include "../Misc/Math.h"
-#include "Entity.h"
+#include "glm/ext/matrix_transform.hpp"
+#include "glm/matrix.hpp"
+#include "../../Misc/Math.h"
+#include "../Entity.h"
 
 void Transform::OnLoad() {
 
@@ -30,7 +30,7 @@ void Transform::OnFree() {
 }
 
 Transform::Transform(class Entity* parent, const Transformation* const transformation) :
-        Component(parent, typeid(Transform).hash_code())
+        Component(parent, typeid(Transform))
         , Location(transformation ? transformation->Location : glm::vec3(0))
         , Rotation(transformation ? transformation->Rotation : glm::vec3(0))
         , Scale(transformation ? transformation->Scale : glm::vec3(1))

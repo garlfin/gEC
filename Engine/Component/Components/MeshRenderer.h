@@ -8,7 +8,7 @@
 #include <typeinfo>
 
 #include "Component.h"
-#include "../Asset/Mesh/VAO.h"
+#include "../../Asset/Mesh/VAO.h"
 
 
 class MeshRenderer : public Component {

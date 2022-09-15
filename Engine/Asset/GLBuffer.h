@@ -16,11 +16,11 @@ enum class BufferBindLocation {
 };
 
 template<typename T>
-struct GLBuffer : public Asset {
+class GLBuffer : public Asset {
 private:
     uint32_t _size;
 public:
-    GLBuffer(const Window* window, uint32_t count = 0) : Asset(window), _size(sizeof(T) * count)
+    GLBuffer(const Window* window, uint32_t count = 1) : Asset(window), _size(sizeof(T) * count)
     {
         glCreateBuffers(1, (GLuint*) &_ID);
         glNamedBufferStorage(_ID, _size, nullptr, GL_DYNAMIC_STORAGE_BIT);
@@ -34,12 +34,16 @@ public:
         glNamedBufferStorage(_ID, _size, data, GL_DYNAMIC_STORAGE_BIT);
     }
 
-    void ReplaceData(T* data, uint32_t count = 0, uint32_t offset = 0) {
-        glNamedBufferSubData(_ID, offset, count == 0 ? _size : count * sizeof(T), data);
+    void ReplaceData(T* data, uint32_t count = 1, uint32_t offset = 0) {
+        glNamedBufferSubData(_ID, offset, count * sizeof(T), data);
     }
 
     void ReplaceData(std::vector<T>* data, uint32_t offset = 0) {
-        glNamedBufferSubData(_ID, offset, data->size(), data->data());
+        glNamedBufferSubData(_ID, offset, data->size() * sizeof(T), data->data());
+    }
+
+    void ReplaceData(void* data, uint32_t byteCount = sizeof(T), uint32_t offset = 0) {
+        glNamedBufferSubData(_ID, offset, byteCount, data);
     }
 
     void Bind(uint32_t slot, BufferBindLocation bindLocation) {

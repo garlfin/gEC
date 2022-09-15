@@ -3,9 +3,9 @@
 //
 
 #include "Component.h"
-#include "Entity.h"
+#include "../Entity.h"
 
-Component::Component(Entity* owner, uint64_t typeID) : mOwner(owner), TypeID(typeID)
+Component::Component(Entity* owner, const std::type_info& typeID) : mOwner(owner), TypeID(typeID.hash_code())
 {
 }
 

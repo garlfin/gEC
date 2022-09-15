@@ -7,7 +7,7 @@
 
 
 #include <cstdint>
-#include "ComponentManager.h"
+#include "../Managers/ComponentManager.h"
 
 class Entity;
 class Window;
@@ -17,7 +17,7 @@ class Component {
 protected:
     Entity* mOwner;
 public:
-    Component(Entity*, uint64_t);
+    Component(Entity*, const std::type_info&);
     virtual ~Component();
 
     virtual void OnLoad() = 0;
