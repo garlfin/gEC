@@ -14,9 +14,9 @@ void Transform::OnLoad() {
 
 void Transform::OnUpdate(double d) {
     Model = glm::scale(glm::translate(glm::mat4(1), Location), Scale);
-    Model = glm::rotate(Model, Rotation.x * DEG_TO_RAD, glm::vec3(1, 0, 0));
-    Model = glm::rotate(Model, Rotation.y * DEG_TO_RAD, glm::vec3(0, 1, 0));
-    Model = glm::rotate(Model, Rotation.z * DEG_TO_RAD, glm::vec3(0, 0, 1));
+    //Model = glm::rotate(Model, Rotation.x * DEG_TO_RAD, glm::vec3(1, 0, 0));
+    //Model = glm::rotate(Model, Rotation.y * DEG_TO_RAD, glm::vec3(0, 1, 0));
+    //Model = glm::rotate(Model, Rotation.z * DEG_TO_RAD, glm::vec3(0, 0, 1));
 
     if (Owner() && Owner()->GetComponent<Transform>()) { Model *= Owner()->GetComponent<Transform>()->Model; }
 }

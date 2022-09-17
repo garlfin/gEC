@@ -22,7 +22,7 @@ public:
 
     void InitFrame()
     {
-        camBuffer.ReplaceData(CurrentCamera->Data());
+        camBuffer.ReplaceData(CurrentCamera->Data(), sizeof(CameraData));
     }
 };
 

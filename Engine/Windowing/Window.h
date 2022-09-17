@@ -31,8 +31,6 @@ public:
     // Window(uint16_t, uint16_t, std::string);
     // Window(glm::i16vec2, const char*);
 
-
-
     void Run();
 };
 

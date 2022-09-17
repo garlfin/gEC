@@ -149,7 +149,7 @@ float Window::Aspect() {
 }
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam) {
-    //if(severity == GL_DEBUG_SEVERITY_HIGH); throw std::runtime_error(message);
+    //if(severity == GL_DEBUG_SEVERITY_HIGH) throw std::runtime_error(message);
     std::cout << message << std::endl;
 
 }

@@ -21,29 +21,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="File restructure, transform component">
-      <change afterPath="$PROJECT_DIR$/Engine/Component/Components/Camera.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Struct/ObjectData.h" afterDir="false" />
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Fixes to RenderDoc compatability, added camera class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Component.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Component.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/ComponentManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Managers/ComponentManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/MeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/MeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/CameraData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Struct/CameraData.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.vert" beforeDir="false" afterPath="$PROJECT_DIR$/default.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/include.glsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +142,8 @@
       <workItem from="1662993415156" duration="23482000" />
       <workItem from="1663086595843" duration="342000" />
       <workItem from="1663154985147" duration="20443000" />
-      <workItem from="1663246364433" duration="4588000" />
+      <workItem from="1663246364433" duration="4620000" />
+      <workItem from="1663338873557" duration="1322000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -195,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663086894825</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixes to RenderDoc compatability, added camera class.">
+      <created>1663258969077</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663258969077</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +210,8 @@
     <MESSAGE value="Bindless textures" />
     <MESSAGE value="Fixed null-terminating error, home-grown GLSL include system." />
     <MESSAGE value="File restructure, transform component" />
-    <option name="LAST_COMMIT_MESSAGE" value="File restructure, transform component" />
+    <MESSAGE value="Fixes to RenderDoc compatability, added camera class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes to RenderDoc compatability, added camera class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
