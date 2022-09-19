@@ -13,7 +13,7 @@ protected:
     float near, far, fov;
     CameraData CamDat;
 public:
-    Camera(Entity*, float n, float f, float fovX);
+    Camera(Entity*, float n, float f, float fovY);
 
     void OnLoad() override;
 

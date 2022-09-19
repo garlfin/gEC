@@ -5,20 +5,19 @@
 #ifndef IME_CAMERAMANAGER_H
 #define IME_CAMERAMANAGER_H
 
-
 #include "../Components/Camera.h"
 #include "../../Asset/GLBuffer.h"
 
 class CameraManager : public ComponentManager<Camera> {
 private:
-    GLBuffer<CameraData> camBuffer;
+    const GLBuffer<CameraData> camBuffer;
 public:
     CameraManager(Window* window) : camBuffer(window) {};
 
     Camera* CurrentCamera;
-    Entity* CurrentCameraOwner() { return CurrentCamera->Owner(); }
+    Entity* const CurrentCameraOwner() { return CurrentCamera->Owner(); }
 
-    GLBuffer<CameraData>* CamBuffer() { return &camBuffer; }
+    const GLBuffer<CameraData>* const CamBuffer() { return &camBuffer; }
 
     void InitFrame()
     {

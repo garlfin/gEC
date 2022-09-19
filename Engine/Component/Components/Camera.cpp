@@ -18,23 +18,18 @@ void Camera::OnUpdate(double d) {
 }
 
 void Camera::OnRender(double d) {
-    const float aspect = (float) Owner()->Window()->Size.x / Owner()->Window()->Size.y;
-    CamDat.Projection = glm::perspective((float) (2 * atan(tan(0.5 * fov * DEG_TO_RAD)) * aspect), aspect, near, far);
+
+    const float aspect = Owner()->Window()->Aspect();
+    CamDat.Projection = glm::perspective(fov * DEG_TO_RAD, aspect, near, far);
 
     Transform* transform = Owner()->GetComponent<Transform>();
 
-    const float pitch = std::clamp(transform->Rotation.x * DEG_TO_RAD, -89.0f, 89.0f);
-    const float yaw = transform->Rotation.y * DEG_TO_RAD;
+    glm::mat4 Model = glm::translate(glm::mat4(1), -transform->Location);
+    Model = glm::rotate(Model, -transform->Rotation.z * DEG_TO_RAD, glm::vec3(0, 0, 1));
+    Model = glm::rotate(Model, -transform->Rotation.y * DEG_TO_RAD, glm::vec3(0, 1, 0));
+    Model = glm::rotate(Model, -transform->Rotation.x * DEG_TO_RAD, glm::vec3(1, 0, 0));
 
-    Front.x = cos(glm::radians(yaw)) * cos(pitch);
-    Front.y = sin(glm::radians(pitch));
-    Front.z = sin(glm::radians(yaw)) * cos(pitch);
-    Front = glm::normalize(Front);
-
-    Right = glm::normalize(glm::cross(Front, glm::vec3(0, 1, 0)));
-    Up = glm::normalize(glm::cross(Front, Up));
-
-    CamDat.View = glm::lookAt(transform->Location, transform->Location + Front, Up);
+    CamDat.View = glm::inverse(Model);
     CamDat.CameraPos = transform->Location;
     CamDat.OtherData = glm::vec4(fov, near, far, aspect);
 }
@@ -42,7 +37,7 @@ void Camera::OnRender(double d) {
 void Camera::OnFree() {
 }
 
-Camera::Camera(Entity *owner, float n, float f, float fovX) : Component(owner, typeid(Camera)), near(n), far(f), fov(fovX) {
+Camera::Camera(Entity *owner, float n, float f, float fovY) : Component(owner, typeid(Camera)), near(n), far(f), fov(fovY) {
 
 }
 

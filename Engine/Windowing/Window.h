@@ -22,7 +22,7 @@ public:
     glm::i16vec2 MousePosition;
     glm::vec2 MouseNormalized() { return MousePosition / Size; }
 
-    float Aspect();
+    const float Aspect();
     const char* const Title;
 
     CameraManager* CamManager;

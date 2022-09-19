@@ -21,13 +21,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Fixes to RenderDoc compatability, added camera class.">
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Minor fixes to bad code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Camera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Struct/CameraData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Struct/CameraData.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.vert" beforeDir="false" afterPath="$PROJECT_DIR$/default.vert" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +112,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="iME" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iME" TARGET_NAME="iME" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="iME" RUN_TARGET_NAME="iME">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -144,6 +154,7 @@
       <workItem from="1663154985147" duration="20443000" />
       <workItem from="1663246364433" duration="4620000" />
       <workItem from="1663338873557" duration="1322000" />
+      <workItem from="1663547416395" duration="491000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -232,9 +243,19 @@
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h</url>
-          <line>24</line>
-          <option name="timeStamp" value="57" />
+          <url>file://$PROJECT_DIR$/Engine/Windowing/Window.cpp</url>
+          <line>142</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Component/Components/Camera.cpp</url>
+          <line>33</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Windowing/Window.cpp</url>
+          <line>119</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

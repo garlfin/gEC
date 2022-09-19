@@ -19,6 +19,7 @@ public:
         glm::vec3 Location;
         glm::vec3 Position;
     };
+
     glm::vec3 Rotation;
     glm::vec3 Scale;
 
@@ -31,6 +32,10 @@ public:
     void OnRender(double d) override;
 
     void OnFree() override;
+
+    glm::vec3 Front;
+    glm::vec3 Up;
+    glm::vec3 Right;
 
 };
 

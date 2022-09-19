@@ -19,8 +19,9 @@ template<typename T>
 class GLBuffer : public Asset {
 private:
     uint32_t _size;
+    uint32_t _count;
 public:
-    GLBuffer(const Window* window, uint32_t count = 1) : Asset(window), _size(sizeof(T) * count)
+    GLBuffer(const Window* window, uint32_t count = 1) : Asset(window), _size(sizeof(T) * count), _count(count)
     {
         glCreateBuffers(1, (GLuint*) &_ID);
         glNamedBufferStorage(_ID, _size, nullptr, GL_DYNAMIC_STORAGE_BIT);
@@ -34,19 +35,19 @@ public:
         glNamedBufferStorage(_ID, _size, data, GL_DYNAMIC_STORAGE_BIT);
     }
 
-    void ReplaceData(T* data, uint32_t count = 1, uint32_t offset = 0) {
-        glNamedBufferSubData(_ID, offset, count * sizeof(T), data);
+    void ReplaceData(T* data, uint32_t count = 0, uint32_t offset = 0) const {
+        glNamedBufferSubData(_ID, offset, (count ? _count : count) * sizeof(T), data);
     }
 
-    void ReplaceData(std::vector<T>* data, uint32_t offset = 0) {
+    void ReplaceData(std::vector<T>* data, uint32_t offset = 0) const {
         glNamedBufferSubData(_ID, offset, data->size() * sizeof(T), data->data());
     }
 
-    void ReplaceData(void* data, uint32_t byteCount = sizeof(T), uint32_t offset = 0) {
+    void ReplaceData(void* data, uint32_t byteCount = sizeof(T), uint32_t offset = 0) const {
         glNamedBufferSubData(_ID, offset, byteCount, data);
     }
 
-    void Bind(uint32_t slot, BufferBindLocation bindLocation) {
+    void Bind(uint32_t slot, BufferBindLocation bindLocation) const {
         glBindBufferBase((GLenum) bindLocation, slot, _ID);
     }
 };

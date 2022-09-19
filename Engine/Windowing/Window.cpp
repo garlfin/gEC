@@ -18,6 +18,8 @@
 #include "Component/Managers/CameraManager.h"
 
 #define DEBUG(x) std::cout << "DEBUG: " << x << std::endl
+#define CAMERA_SPEED 0.1f
+#define CAMERA_SENSITIVITY 0.1f
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam);
 
@@ -39,6 +41,8 @@ Window::Window(glm::i16vec2 size, const char* title) : Size(size), Title(title)
         glfwTerminate();
         throw std::runtime_error("Failed to create GLFW window.");
     }
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
     glfwMakeContextCurrent(window);
 
     if(!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
@@ -85,8 +89,9 @@ void Window::Run() {
 
     Entity* camera = new Entity(this);
     camera->AddComponent(transformManager.Create<Transform>(camera));
-    camera->GetComponent<Transform>()->Rotation = glm::vec3(90, 90, 0);
-    camera->AddComponent(CamManager->Create<Camera>(camera, 0.1, 300, 60));
+    camera->GetComponent<Transform>()->Rotation = glm::vec3(0, 90, 0);
+    camera->GetComponent<Transform>()->Location = glm::vec3(0, 0, 0);
+    camera->AddComponent(CamManager->Create<Camera>(camera, 0.1, 300, 40));
     camera->GetComponent<Camera>()->Set();
 
     diffuse->Use();
@@ -95,7 +100,7 @@ void Window::Run() {
     GLBuffer<ObjectData> objDat(this, 1);
     objDat.Bind(1, BufferBindLocation::UniformBuffer);
 
-    //diffuse->SetUniform(1, tex->handle());
+    diffuse->SetUniform(1, tex->handle());
 
     auto* camTransform = camera->GetComponent<Transform>();
     auto* triTransform = test->GetComponent<Transform>();
@@ -103,17 +108,31 @@ void Window::Run() {
     double delta;
     double totalTime = 0;
 
+    glm::vec2 prevCursorPos {};
+    glm::vec2 cursorDelta;
+
+    bool firstMouse = true;
+
     while (!glfwWindowShouldClose(window))
     {
         delta = glfwGetTime() - totalTime;
         totalTime += delta;
 
-        triTransform->Rotation.y += delta * 5;
+        if (glfwGetKey(window, GLFW_KEY_W)) camTransform->Location += CAMERA_SPEED * camTransform->Front * (float) delta;
+        if (glfwGetKey(window, GLFW_KEY_S)) camTransform->Location -= CAMERA_SPEED * camTransform->Front * (float) delta;
+        if (glfwGetKey(window, GLFW_KEY_D)) camTransform->Location += CAMERA_SPEED * camTransform->Right * (float) delta;
+        if (glfwGetKey(window, GLFW_KEY_A)) camTransform->Location -= CAMERA_SPEED * camTransform->Right * (float) delta;
 
-        if (glfwGetKey(window, GLFW_KEY_W)) camTransform->Location.z += .1 * delta;
-        if (glfwGetKey(window, GLFW_KEY_A)) camTransform->Location.x -= .1 * delta;
-        if (glfwGetKey(window, GLFW_KEY_S)) camTransform->Location.z -= .1 * delta;
-        if (glfwGetKey(window, GLFW_KEY_D)) camTransform->Location.x += .1 * delta;
+        double newX, newY;
+
+        glfwGetCursorPos(window, &newX, &newY);
+        cursorDelta = glm::dvec2(prevCursorPos.x - newX, prevCursorPos.y - newY);
+        if (firstMouse) { firstMouse = false; cursorDelta = glm::dvec2(0.0); }
+
+        prevCursorPos = glm::vec2(newX, newY);
+
+        camTransform->Rotation.x -= cursorDelta.y * CAMERA_SENSITIVITY;
+        camTransform->Rotation.y -= cursorDelta.x * CAMERA_SENSITIVITY;
 
         transformManager.OnUpdate(delta);
         CamManager->OnRender(delta);
@@ -121,7 +140,7 @@ void Window::Run() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         CamManager->InitFrame();
-        objDat.ReplaceData(&triTransform->Model, sizeof(glm::mat4));
+        objDat.ReplaceData((float*) &triTransform->Model, 64);
 
         meshRendererManager.OnRender(0);
 
@@ -144,13 +163,12 @@ void Window::Run() {
     glfwTerminate();
 }
 
-float Window::Aspect() {
+const float Window::Aspect() {
     return (float) Size.x / Size.y;
 }
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam) {
-    //if(severity == GL_DEBUG_SEVERITY_HIGH) throw std::runtime_error(message);
+    if(severity == GL_DEBUG_SEVERITY_HIGH) throw std::runtime_error(message);
     std::cout << message << std::endl;
-
 }
 
