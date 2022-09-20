@@ -4,25 +4,33 @@
 
 #include "Entity.h"
 
-Entity::Entity(class Window* window, Entity* parent) : mWindow(window), mParent(parent)  {
+Entity::Entity(class Window *window, Entity *parent) : window(window), parent(parent)
+{
 }
 
-void Entity::AddComponent(Component *component) {
-    mComponents.push_back(component);
+void Entity::AddComponent(Component *component)
+{
+    components.push_back(component);
 }
 
-Entity::~Entity() {
-    for (Component* mComponent : mComponents)
+Entity::~Entity()
+{
+    for (Component *mComponent: components)
     {
-        mComponent->OnFree();
-        mComponent->Invalidate();
+        if (mComponent->Owner())
+        {
+            mComponent->OnFree();
+            mComponent->Invalidate();
+        }
+        delete mComponent;
     }
-    mComponents.clear();
+    components.clear();
 }
 
-void Entity::RemoveComponent(Component *t) {
-    auto loc = std::find(mComponents.begin(), mComponents.end(), t);
-    if (loc == mComponents.end()) return;
-    mComponents.erase(loc);
+void Entity::RemoveComponent(Component *t)
+{
+    auto loc = std::find(components.begin(), components.end(), t);
+    if (loc == components.end()) return;
+    components.erase(loc);
     t->Invalidate();
 }

@@ -5,9 +5,9 @@
 #include "Texture.h"
 #include "math.h"
 
-Texture::Texture(Window* window) : Asset(window), _handle(0) {}
+Texture::Texture(Window* window) : Asset(window), _handle(0), mMipCount(0) {}
 
-const glm::uvec2 Texture::size() const { return _size; }
+const glm::uvec2 Texture::size() const { return Size; }
 
 const uint64_t Texture::handle() {
     if (_handle == 0)
@@ -18,12 +18,14 @@ const uint64_t Texture::handle() {
     return _handle;
 }
 
-const uint16_t Texture::MipCount() const {
-    return (uint16_t) log2(std::min(_size.x, _size.y)) + 1;
+uint8_t Texture::MipCount() {
+    if (mMipCount != 0) return mMipCount;
+    mMipCount = log2(std::min(Size.x, Size.y)) + 1;
+    return mMipCount;
 }
 
 const glm::u16vec2 Texture::SizeAtMip(const uint16_t level) const {
-    return glm::u16vec2(_size.x >> level, _size.y >> level);
+    return glm::u16vec2(Size.x >> level, Size.y >> level);
 }
 
 const int32_t Texture::Use(int32_t slot) const {

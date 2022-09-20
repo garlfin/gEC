@@ -5,16 +5,16 @@
 #include "Component.h"
 #include "../Entity.h"
 
-Component::Component(Entity* owner, const std::type_info& typeID) : mOwner(owner), TypeID(typeID.hash_code())
+Component::Component(Entity* owner, const std::type_info& typeID) : _Owner(owner), TypeID(typeID.hash_code())
 {
 }
 
 Entity * const Component::Owner() {
-    return mOwner;
+    return _Owner;
 }
 
  Window * const Component::Window() {
-    return mOwner->Window();
+    return _Owner->Window();
 }
 
 Component::~Component() { }

@@ -2,8 +2,7 @@
 // Created by scion on 9/14/2022.
 //
 
-#ifndef IME_CAMERAMANAGER_H
-#define IME_CAMERAMANAGER_H
+#pragma once
 
 #include "../Components/Camera.h"
 #include "../../Asset/GLBuffer.h"
@@ -25,5 +24,3 @@ public:
     }
 };
 
-
-#endif //IME_CAMERAMANAGER_H

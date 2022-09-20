@@ -6,7 +6,7 @@
 
 #include <fstream>
 #include "Texture2D.h"
-#include "../../Struct/PVRHeader.h"
+#include "../../Struct/PVR.h"
 #include <iostream>
 
 
@@ -18,21 +18,17 @@ Texture2D::Texture2D(Window* window, const char *path, bool genMips ) : Texture(
         throw std::runtime_error("Failed to open file");
     }
 
-    PVRHeader pvrHeader;
+    const PVR::Header *const header = PVR::LoadHeader(file);
 
-    file.read((char*) &pvrHeader, sizeof(PVRHeader));
-    file.seekg(pvrHeader.MetaSize, std::ios::cur);
+    Size = header->Size();
+    mMipCount = header->Mips;
 
-    _size = glm::u16vec2(pvrHeader.Width, pvrHeader.Height);
+    GLenum format = ToInternalFormat(header->Format);
 
-    GLenum format = ToInternalFormat(pvrHeader.Format);
+    if(header->ColorSpace == 1) format += 2140;
 
-    if(pvrHeader.ColorSpace == 1) format += 2140;
-
-    if(pvrHeader.Version == 0x50565203) std::cout << "Endianness does not match" << std::endl;
-
-    glCreateTextures(GL_TEXTURE_2D, 1, (GLuint*) &_ID);
-    glTextureStorage2D(_ID, pvrHeader.Mips, format, pvrHeader.Width, pvrHeader.Height);
+    glCreateTextures(GL_TEXTURE_2D, 1, &_ID);
+    glTextureStorage2D(_ID, header->Mips, format, header->Width, header->Height);
 
     glTextureParameteri(_ID, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTextureParameteri(_ID, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
@@ -41,7 +37,9 @@ Texture2D::Texture2D(Window* window, const char *path, bool genMips ) : Texture(
     glTextureParameteri(_ID, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTextureParameteri(_ID, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-    for (int i = 0; i < pvrHeader.Mips ; i++)
+    file.seekg(header->MetaSize, std::ifstream::cur);
+
+    for (int i = 0; i < header->Mips ; i++)
     {
         glm::u16vec2 mipSize = SizeAtMip(i);
         uint32_t bytesAtMip = quickCeilDivision(mipSize.x * mipSize.y, 16) * 16;
@@ -54,7 +52,23 @@ Texture2D::Texture2D(Window* window, const char *path, bool genMips ) : Texture(
         free(mipData);
     }
 
-    if(genMips || pvrHeader.Mips == 1) glGenerateTextureMipmap(_ID);
+    if(genMips || header->Mips == 1) glGenerateTextureMipmap(_ID);
 
+    delete header;
+}
 
+Texture2D::Texture2D(Window *window, const glm::u16vec2 size, const GLenum format, uint8_t mips) : Texture(window)
+{
+    Size = size;
+    mips = mips;
+
+    glCreateTextures(GL_TEXTURE_2D, 1, &_ID);
+    glTextureStorage2D(mips, MipCount(), format, Size.x, Size.y);
+
+    glTextureParameteri(_ID, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTextureParameteri(_ID, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTextureParameteri(_ID, GL_TEXTURE_MAX_ANISOTROPY, 4);
+
+    glTextureParameteri(_ID, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTextureParameteri(_ID, GL_TEXTURE_WRAP_T, GL_REPEAT);
 }

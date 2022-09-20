@@ -10,6 +10,6 @@ out vec4 FragColor;
 
 void main()
 {
-    FragColor = vec4(texture(sampler2D(albedo), FragPos.zy).rgb, 1);
+    FragColor = vec4(texture(sampler2D(albedo), FragPos.xy).rgb, 1);
     FragColor.rgb = pow(FragColor.rgb, vec3(1 / 2.2));
 }

@@ -2,8 +2,7 @@
 // Created by scion on 9/5/2022.
 //
 
-#ifndef IME_ENTITY_H
-#define IME_ENTITY_H
+#pragma once
 
 #include <memory>
 #include <vector>
@@ -15,22 +14,22 @@ class Window;
 
 class Entity final {
 private:
-    std::vector<Component*> mComponents;
-    Entity* const mParent;
-    Window* const mWindow;
+    std::vector<Component*> components;
+    Entity* const parent;
+    Window* const window;
 public:
     Entity(Window*, Entity* = nullptr);
     ~Entity();
 
-    Window* const Window() { return mWindow; }
-    Entity* const Parent() { return mParent; }
+    Window* const Window() { return window; }
+    Entity* const Parent() { return parent; }
 
     void AddComponent(Component*);
 
     template<typename T>
     T* GetComponent() {
         uint64_t hashCode = typeid(T).hash_code();
-        for (Component* component : mComponents) if (component->TypeID == hashCode) return (T*) component;
+        for (Component* component : components) if (component->TypeID == hashCode) return (T*) component;
         throw std::runtime_error(typeid(T).name());
     };
 
@@ -40,4 +39,3 @@ public:
 };
 
 
-#endif //IME_ENTITY_H

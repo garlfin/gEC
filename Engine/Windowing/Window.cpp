@@ -89,7 +89,6 @@ void Window::Run() {
 
     Entity* camera = new Entity(this);
     camera->AddComponent(transformManager.Create<Transform>(camera));
-    camera->GetComponent<Transform>()->Rotation = glm::vec3(0, 90, 0);
     camera->GetComponent<Transform>()->Location = glm::vec3(0, 0, 0);
     camera->AddComponent(CamManager->Create<Camera>(camera, 0.1, 300, 40));
     camera->GetComponent<Camera>()->Set();
@@ -118,21 +117,17 @@ void Window::Run() {
         delta = glfwGetTime() - totalTime;
         totalTime += delta;
 
-        if (glfwGetKey(window, GLFW_KEY_W)) camTransform->Location += CAMERA_SPEED * camTransform->Front * (float) delta;
-        if (glfwGetKey(window, GLFW_KEY_S)) camTransform->Location -= CAMERA_SPEED * camTransform->Front * (float) delta;
-        if (glfwGetKey(window, GLFW_KEY_D)) camTransform->Location += CAMERA_SPEED * camTransform->Right * (float) delta;
-        if (glfwGetKey(window, GLFW_KEY_A)) camTransform->Location -= CAMERA_SPEED * camTransform->Right * (float) delta;
-
-        double newX, newY;
-
-        glfwGetCursorPos(window, &newX, &newY);
-        cursorDelta = glm::dvec2(prevCursorPos.x - newX, prevCursorPos.y - newY);
+        glm::dvec2 newPos;
+        glfwGetCursorPos(window, &newPos.x, &newPos.y);
+        cursorDelta = (glm::vec2) newPos - prevCursorPos;
         if (firstMouse) { firstMouse = false; cursorDelta = glm::dvec2(0.0); }
 
-        prevCursorPos = glm::vec2(newX, newY);
+        prevCursorPos = newPos;
 
-        camTransform->Rotation.x -= cursorDelta.y * CAMERA_SENSITIVITY;
-        camTransform->Rotation.y -= cursorDelta.x * CAMERA_SENSITIVITY;
+        camTransform->Rotation.x = std::clamp(camTransform->Rotation.x + cursorDelta.y * CAMERA_SENSITIVITY, -89.0f, 89.0f);
+        camTransform->Rotation.y += cursorDelta.x * CAMERA_SENSITIVITY;
+
+        camTransform->Location.z = -5 - sin(totalTime * 3);
 
         transformManager.OnUpdate(delta);
         CamManager->OnRender(delta);

@@ -2,9 +2,7 @@
 // Created by scion on 9/7/2022.
 //
 
-#ifndef IME_COMPONENT_H
-#define IME_COMPONENT_H
-
+#pragma once
 
 #include <cstdint>
 #include "../Managers/ComponentManager.h"
@@ -15,7 +13,7 @@ class Window;
 
 class Component {
 protected:
-    Entity* mOwner;
+    Entity* _Owner;
 public:
     Component(Entity*, const std::type_info&);
     virtual ~Component();
@@ -30,8 +28,6 @@ public:
 
     const uint64_t TypeID;
 
-    void Invalidate() { mOwner = nullptr; }
+    void Invalidate() { _Owner = nullptr; }
 };
 
-
-#endif //IME_COMPONENT_H

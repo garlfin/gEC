@@ -2,8 +2,7 @@
 // Created by scion on 8/29/2022.
 //
 
-#ifndef IME_WINDOW_H
-#define IME_WINDOW_H
+#pragma once
 
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
@@ -34,5 +33,3 @@ public:
     void Run();
 };
 
-
-#endif //IME_WINDOW_H

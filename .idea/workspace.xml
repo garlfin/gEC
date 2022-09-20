@@ -21,18 +21,34 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Minor fixes to bad code.">
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Fixes to RenderDoc compatability, added camera class.">
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Struct/PVR.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Struct/PVR.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Camera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Component.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Component.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Component.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/ComponentManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Managers/ComponentManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Misc/Math.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Misc/Math.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/CameraData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Struct/CameraData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/ObjectData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Struct/ObjectData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/PVRHeader.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.vert" beforeDir="false" afterPath="$PROJECT_DIR$/default.vert" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,26 +92,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/scion/CLionProjects/iME&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
-    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/scion/CLionProjects/iME",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "structure.view.defaults.are.configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\scion\CLionProjects\iME" />
@@ -155,6 +172,7 @@
       <workItem from="1663246364433" duration="4620000" />
       <workItem from="1663338873557" duration="1322000" />
       <workItem from="1663547416395" duration="491000" />
+      <workItem from="1663689693587" duration="3224000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -233,19 +251,9 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Component/Entity.h</url>
-          <line>39</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Material/Shader.h</url>
           <line>15</line>
           <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Windowing/Window.cpp</url>
-          <line>142</line>
-          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Component/Components/Camera.cpp</url>
@@ -253,9 +261,19 @@
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Windowing/Window.cpp</url>
-          <line>119</line>
+          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp</url>
+          <line>25</line>
           <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp</url>
+          <line>39</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp</url>
+          <line>37</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

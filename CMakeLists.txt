@@ -14,7 +14,7 @@ file(GLOB_RECURSE ime_src
         "Engine/*.c"
         )
 
-add_executable(iME main.cpp ${ime_src} Engine/Struct/ObjectData.h Engine/Component/Components/Camera.cpp Engine/Component/Components/Camera.h Engine/Component/Managers/CameraManager.h)
+add_executable(iME main.cpp ${ime_src} Engine/Struct/ObjectData.h Engine/Component/Components/Camera.cpp Engine/Component/Components/Camera.h Engine/Component/Managers/CameraManager.h Engine/Asset/Texture/TextureCube.cpp Engine/Asset/Texture/TextureCube.h Engine/Struct/PVR.cpp)
 
 find_library(LIBGLFW glfw3 Vendor/glfw)
 target_link_libraries(iME ${LIBGLFW})

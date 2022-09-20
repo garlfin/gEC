@@ -2,8 +2,7 @@
 // Created by scion on 9/13/2022.
 //
 
-#ifndef IME_TRANSFORM_H
-#define IME_TRANSFORM_H
+#pragma once
 
 #include "glm/vec3.hpp"
 #include "glm/mat4x4.hpp"
@@ -32,11 +31,6 @@ public:
     void OnRender(double d) override;
 
     void OnFree() override;
-
-    glm::vec3 Front;
-    glm::vec3 Up;
-    glm::vec3 Right;
-
 };
 
 struct Transformation {
@@ -44,6 +38,3 @@ struct Transformation {
     glm::vec3 Rotation;
     glm::vec3 Scale;
 };
-
-
-#endif //IME_TRANSFORM_H

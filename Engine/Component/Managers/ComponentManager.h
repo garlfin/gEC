@@ -2,8 +2,7 @@
 // Created by scion on 9/7/2022.
 //
 
-#ifndef IME_COMPONENTMANAGER_H
-#define IME_COMPONENTMANAGER_H
+#pragma once
 
 #include <vector>
 #include <iostream>
@@ -65,6 +64,3 @@ public:
         components.clear();
     }
 };
-
-
-#endif //IME_COMPONENTMANAGER_H

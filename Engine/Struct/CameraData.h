@@ -2,8 +2,7 @@
 // Created by scion on 9/2/2022.
 //
 
-#ifndef IME_CAMERADATA_H
-#define IME_CAMERADATA_H
+#pragma once
 
 #include <glm/mat4x4.hpp>
 
@@ -17,4 +16,3 @@ public:
     glm::vec4 OtherData; // FOV, CLIP_NEAR, CLIP_FAR, ASPECT
 };
 
-#endif //IME_CAMERADATA_H

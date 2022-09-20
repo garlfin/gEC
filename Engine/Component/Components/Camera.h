@@ -2,8 +2,7 @@
 // Created by scion on 9/14/2022.
 //
 
-#ifndef IME_CAMERA_H
-#define IME_CAMERA_H
+#pragma once
 
 #include "Component.h"
 #include "../../Struct/CameraData.h"
@@ -29,6 +28,3 @@ public:
 
     void Set();
 };
-
-
-#endif //IME_CAMERA_H
