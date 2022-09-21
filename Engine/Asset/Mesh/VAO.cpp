@@ -5,37 +5,63 @@
 #include "VAO.h"
 
 namespace {
-    const float triVerts[]{
-            -1, -1, 0,
-            0, 1, 0,
-            1, -1, 0
+    const float TriVerts[]
+    {
+        -1, -1, 0,
+        0, 1, 0,
+        1, -1, 0
     };
 
-    const uint32_t triIndices[]{
-            0, 1, 2
+    const uint32_t TriIndices[]
+    {
+        0, 1, 2
+    };
+
+    const float SkyboxVerts[]
+    {
+        -1, -1, -1,
+        1, -1, -1,
+        1, 1, -1,
+        -1, 1, -1,
+        -1, -1, 1,
+        1, -1, 1,
+        1, 1, 1,
+        -1, 1, 1
+    };
+
+    const uint32_t SkyboxIndices[]
+    {
+        0, 1, 2,
+        2, 3, 0,
+        4, 5, 6,
+        6, 7, 4,
+        0, 4, 7,
+        7, 3, 0,
+        1, 5, 6,
+        6, 2, 1
     };
 }
 
-VAO::VAO(const Window* window) : Asset(window), positions(window, 3, (glm::vec3*) &triVerts), indices(window, 3, (glm::uvec3*) &triIndices)
+VAO::VAO(const class Window* window) : Asset(window), positions(window, 8, (glm::vec3*) &SkyboxVerts), indices(window, 24, (glm::uvec3*) &SkyboxIndices)
 {
-    glCreateVertexArrays(1, (GLuint*) &_ID);
-    glVertexArrayVertexBuffer(_ID, 0, positions.id(), 0, sizeof(glm::vec3));
+    glCreateVertexArrays(1, (GLuint*) &ID);
+    glVertexArrayVertexBuffer(ID, 0, positions.Id(), 0, sizeof(glm::vec3));
 
-    glEnableVertexArrayAttrib(_ID, 0);
+    glEnableVertexArrayAttrib(ID, 0);
 
-    glVertexArrayAttribFormat(_ID, 0, 3, GL_FLOAT, GL_FALSE, 0);
+    glVertexArrayAttribFormat(ID, 0, 3, GL_FLOAT, GL_FALSE, 0);
 
-    glVertexArrayAttribBinding(_ID, 0, 0);
-    glVertexArrayElementBuffer(_ID, indices.id());
+    glVertexArrayAttribBinding(ID, 0, 0);
+    glVertexArrayElementBuffer(ID, indices.Id());
 
 }
 
 void VAO::Draw(uint32_t count) const {
-    glBindVertexArray(_ID);
-    glDrawElementsInstanced(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr, count);
+    glBindVertexArray(ID);
+    glDrawElementsInstanced(GL_TRIANGLES, 24, GL_UNSIGNED_INT, nullptr, count);
 }
 
 
 VAO::~VAO() {
-    glDeleteVertexArrays(1, (GLuint*) &_ID);
+    glDeleteVertexArrays(1, (GLuint*) &ID);
 }

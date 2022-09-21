@@ -21,33 +21,24 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Fixes to RenderDoc compatability, added camera class.">
-      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Struct/PVR.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Struct/PVR.h" afterDir="false" />
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Altered code style, pragma.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Asset.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Asset.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Component.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Component.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Entity.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/ComponentManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Component/Managers/ComponentManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Misc/Math.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Misc/Math.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Struct/CameraData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Struct/CameraData.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Struct/ObjectData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Struct/ObjectData.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Struct/PVRHeader.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +89,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -109,7 +99,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "fileTemplates",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++",
     "structure.view.defaults.are.configured": "true"
   }
 }]]></component>
@@ -172,7 +162,7 @@
       <workItem from="1663246364433" duration="4620000" />
       <workItem from="1663338873557" duration="1322000" />
       <workItem from="1663547416395" duration="491000" />
-      <workItem from="1663689693587" duration="3224000" />
+      <workItem from="1663689693587" duration="10217000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -216,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663258969077</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Altered code style, pragma.">
+      <created>1663696132847</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663696132847</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,16 +237,12 @@
     <MESSAGE value="Fixed null-terminating error, home-grown GLSL include system." />
     <MESSAGE value="File restructure, transform component" />
     <MESSAGE value="Fixes to RenderDoc compatability, added camera class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes to RenderDoc compatability, added camera class." />
+    <MESSAGE value="Altered code style, pragma." />
+    <option name="LAST_COMMIT_MESSAGE" value="Altered code style, pragma." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h</url>
-          <line>19</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Asset/Material/Shader.h</url>
           <line>15</line>
@@ -259,21 +252,6 @@
           <url>file://$PROJECT_DIR$/Engine/Component/Components/Camera.cpp</url>
           <line>33</line>
           <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp</url>
-          <line>25</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp</url>
-          <line>39</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp</url>
-          <line>37</line>
-          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

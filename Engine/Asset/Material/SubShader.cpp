@@ -8,9 +8,9 @@
 #include <iostream>
 #include <fstream>
 
-SubShader::SubShader(Window *window, const char *filePath, ShaderType type, ShaderManager *sManager) : Asset(window)
+SubShader::SubShader(class Window *window, const char *filePath, ShaderType type, ShaderManager *sManager) : Asset(window)
 {
-    _ID = glCreateShader((GLenum) type);
+    ID = glCreateShader((GLenum) type);
 
     std::ifstream shaderSource(filePath, std::ios::in | std::ios::binary);
 
@@ -67,21 +67,21 @@ SubShader::SubShader(Window *window, const char *filePath, ShaderType type, Shad
     }
 
 
-    glShaderSource(_ID, 1, &sPtr, nullptr);
+    glShaderSource(ID, 1, &sPtr, nullptr);
 
     free(sPtr);
 
-    glCompileShader(_ID);
+    glCompileShader(ID);
 
     int status;
-    glGetShaderiv(_ID, GL_COMPILE_STATUS, &status);
+    glGetShaderiv(ID, GL_COMPILE_STATUS, &status);
     if(!status)
     {
         int logLen;
-        glGetShaderiv(id(), GL_INFO_LOG_LENGTH, &logLen);
+        glGetShaderiv(Id(), GL_INFO_LOG_LENGTH, &logLen);
 
         char* const shaderLog = new char[logLen];
-        glGetShaderInfoLog(_ID, logLen, nullptr, shaderLog);
+        glGetShaderInfoLog(ID, logLen, nullptr, shaderLog);
         std::cout << " Shader Compile Error! \n" << shaderLog << std::endl;
         std::cout << "Shader source: " << *sPtr << std::endl;
         delete[] shaderLog;
@@ -91,5 +91,5 @@ SubShader::SubShader(Window *window, const char *filePath, ShaderType type, Shad
 }
 
 SubShader::~SubShader() {
-    glDeleteShader(_ID);
+    glDeleteShader(ID);
 }

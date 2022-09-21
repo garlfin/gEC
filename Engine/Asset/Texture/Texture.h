@@ -17,7 +17,7 @@ protected:
     uint8_t mMipCount;
     static const GLenum ToInternalFormat(uint32_t);
 public:
-    explicit Texture(Window* window);
+    explicit Texture(class Window* window);
     ~Texture() override;
 
     virtual const int32_t Use(int32_t slot) const;

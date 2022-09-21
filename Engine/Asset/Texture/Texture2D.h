@@ -10,8 +10,8 @@
 
 class Texture2D : public Texture {
 public:
-    Texture2D(Window* window, const char*, bool = false);
-    Texture2D(Window* window, glm::u16vec2, GLenum, uint8_t = 0);
+    Texture2D(class Window* window, const char*, bool = false);
+    Texture2D(class Window* window, glm::u16vec2, GLenum, uint8_t = 0);
 };
 
 #endif //IME_TEXTURE2D_H

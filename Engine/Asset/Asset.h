@@ -11,17 +11,17 @@ class Window;
 
 class Asset {
 protected:
-    Asset(const Window* window) : _Window(window) {  }
+    Asset(const Window* window) : Window(window) {  }
 
-    const Window* _Window;
-    std::uint32_t _ID;
+    const Window* Window;
+    std::uint32_t ID;
 public:
     Asset(const Asset&) = delete;
     Asset& operator= (const Asset&) = delete;
 
     virtual ~Asset() { }
 
-    const std::int32_t id() const { return _ID; }
+    const std::int32_t Id() const { return ID; }
 };
 
 

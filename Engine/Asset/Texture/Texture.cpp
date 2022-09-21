@@ -5,14 +5,14 @@
 #include "Texture.h"
 #include "math.h"
 
-Texture::Texture(Window* window) : Asset(window), _handle(0), mMipCount(0) {}
+Texture::Texture(class Window* window) : Asset(window), _handle(0), mMipCount(0) {}
 
 const glm::uvec2 Texture::size() const { return Size; }
 
 const uint64_t Texture::handle() {
     if (_handle == 0)
     {
-        _handle = glGetTextureHandleARB(_ID);
+        _handle = glGetTextureHandleARB(ID);
         glMakeTextureHandleResidentARB(_handle);
     }
     return _handle;
@@ -29,13 +29,13 @@ const glm::u16vec2 Texture::SizeAtMip(const uint16_t level) const {
 }
 
 const int32_t Texture::Use(int32_t slot) const {
-    glBindTextureUnit(slot, _ID);
+    glBindTextureUnit(slot, ID);
     return slot;
 }
 
 Texture::~Texture() {
     if(_handle != 0) glMakeTextureHandleNonResidentARB(_handle);
-    glDeleteTextures(1, &_ID);
+    glDeleteTextures(1, &ID);
 }
 
 #define PVR_BC1 7

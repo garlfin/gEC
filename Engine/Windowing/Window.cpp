@@ -17,9 +17,12 @@
 #include "../Struct/ObjectData.h"
 #include "Component/Managers/CameraManager.h"
 
+namespace { const char* const EXT_ERR = " not supported."; }
+
 #define DEBUG(x) std::cout << "DEBUG: " << x << std::endl
 #define CAMERA_SPEED 0.1f
 #define CAMERA_SENSITIVITY 0.1f
+#define CHECK_EXTENSION(ext) if(!glfwExtensionSupported(ext)) throw std::runtime_error(std::string(ext).append(EXT_ERR));
 
 static void DebugLog(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam);
 
@@ -32,7 +35,6 @@ Window::Window(glm::i16vec2 size, const char* title) : Size(size), Title(title)
     glfwWindowHint(GLFW_VERSION_MINOR, 6);
     //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_RESIZABLE, false);
-
 
     window = glfwCreateWindow(Size.x, Size.y, title, nullptr, nullptr);
 
@@ -61,11 +63,14 @@ Window::Window(glm::i16vec2 size, const char* title) : Size(size), Title(title)
     std::cout << "Version: " << outVer << "." << outMinor << std::endl;
 
     glEnable(GL_DEBUG_OUTPUT);
+    glEnable(GL_DEPTH_TEST);
     glDebugMessageCallback(DebugLog, nullptr);
 
+    CHECK_EXTENSION("GL_ARB_bindless_texture");
 }
 
-void Window::Run() {
+void Window::Run()
+{
     glViewport(0, 0, Size.x, Size.y);
 
     glClearColor(0.2, 0.5, 1, 1);
@@ -95,7 +100,6 @@ void Window::Run() {
 
     diffuse->Use();
 
-
     GLBuffer<ObjectData> objDat(this, 1);
     objDat.Bind(1, BufferBindLocation::UniformBuffer);
 
@@ -117,6 +121,8 @@ void Window::Run() {
         delta = glfwGetTime() - totalTime;
         totalTime += delta;
 
+        glfwSetWindowTitle(window, std::to_string(round(1 / delta)).c_str());
+
         glm::dvec2 newPos;
         glfwGetCursorPos(window, &newPos.x, &newPos.y);
         cursorDelta = (glm::vec2) newPos - prevCursorPos;
@@ -124,6 +130,7 @@ void Window::Run() {
 
         prevCursorPos = newPos;
 
+        triTransform->Rotation.y += delta * 5;
         camTransform->Rotation.x = std::clamp(camTransform->Rotation.x + cursorDelta.y * CAMERA_SENSITIVITY, -89.0f, 89.0f);
         camTransform->Rotation.y += cursorDelta.x * CAMERA_SENSITIVITY;
 
@@ -132,7 +139,7 @@ void Window::Run() {
         transformManager.OnUpdate(delta);
         CamManager->OnRender(delta);
 
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         CamManager->InitFrame();
         objDat.ReplaceData((float*) &triTransform->Model, 64);

@@ -6,46 +6,46 @@
 #include "SubShader.h"
 #include "ShaderManager.h"
 
-Shader::Shader(Window* window, const char* vertex, const char* fragment, ShaderManager* sMan) : Asset(window)
+Shader::Shader(class Window* window, const char* vertex, const char* fragment, ShaderManager* sMan) : Asset(window)
 {
     SubShader vert(window, vertex, ShaderType::Vertex, sMan);
     SubShader frag(window, fragment, ShaderType::Fragment, sMan);
 
-    _ID = glCreateProgram();
+    ID = glCreateProgram();
 
-    glAttachShader(_ID, vert.id());
-    glAttachShader(_ID, frag.id());
+    glAttachShader(ID, vert.Id());
+    glAttachShader(ID, frag.Id());
 
-    glLinkProgram(_ID);
+    glLinkProgram(ID);
 }
 
-Shader::Shader(Window* window, const char* compute, ShaderManager* sMan) : Asset(window)
+Shader::Shader(class Window* window, const char* compute, ShaderManager* sMan) : Asset(window)
 {
     SubShader comp(window, compute, ShaderType::Compute, sMan);
 
-    _ID = glCreateProgram();
+    ID = glCreateProgram();
 
-    glAttachShader(_ID, comp.id());
+    glAttachShader(ID, comp.Id());
 
-    glLinkProgram(_ID);
+    glLinkProgram(ID);
 }
 
 void Shader::Use() const {
-    glUseProgram(_ID);
+    glUseProgram(ID);
 }
 
 
 void Shader::SetUniform(uint32_t slot, const uint64_t value) const
 {
-    glProgramUniform2uiv(_ID, slot, 1, (GLuint*) &value);
+    glProgramUniform2uiv(ID, slot, 1, (GLuint*) &value);
 }
 
 void Shader::SetUniform(uint32_t slot, int32_t value) const
 {
-    glProgramUniform1i(_ID, slot, value);
+    glProgramUniform1i(ID, slot, value);
 }
 
 Shader::~Shader() {
-    glDeleteProgram(_ID);
+    glDeleteProgram(ID);
 }
 

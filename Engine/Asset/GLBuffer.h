@@ -21,34 +21,34 @@ private:
     uint32_t _size;
     uint32_t _count;
 public:
-    GLBuffer(const Window* window, uint32_t count = 1) : Asset(window), _size(sizeof(T) * count), _count(count)
+    GLBuffer(const class Window* window, uint32_t count = 1) : Asset(window), _size(sizeof(T) * count), _count(count)
     {
-        glCreateBuffers(1, (GLuint*) &_ID);
-        glNamedBufferStorage(_ID, _size, nullptr, GL_DYNAMIC_STORAGE_BIT);
+        glCreateBuffers(1, (GLuint*) &ID);
+        glNamedBufferStorage(ID, _size, nullptr, GL_DYNAMIC_STORAGE_BIT);
     }
 
-    ~GLBuffer() { glDeleteBuffers(1, &_ID); }
+    ~GLBuffer() { glDeleteBuffers(1, &ID); }
 
-    GLBuffer(const Window* window, uint32_t count, T* data) : Asset(window), _size(sizeof(T) * count)
+    GLBuffer(const class Window* window, uint32_t count, T* data) : Asset(window), _size(sizeof(T) * count)
     {
-        glCreateBuffers(1, (GLuint*) &_ID);
-        glNamedBufferStorage(_ID, _size, data, GL_DYNAMIC_STORAGE_BIT);
+        glCreateBuffers(1, (GLuint*) &ID);
+        glNamedBufferStorage(ID, _size, data, GL_DYNAMIC_STORAGE_BIT);
     }
 
     void ReplaceData(T* data, uint32_t count = 0, uint32_t offset = 0) const {
-        glNamedBufferSubData(_ID, offset, (count ? _count : count) * sizeof(T), data);
+        glNamedBufferSubData(ID, offset, (count ? _count : count) * sizeof(T), data);
     }
 
     void ReplaceData(std::vector<T>* data, uint32_t offset = 0) const {
-        glNamedBufferSubData(_ID, offset, data->size() * sizeof(T), data->data());
+        glNamedBufferSubData(ID, offset, data->size() * sizeof(T), data->data());
     }
 
     void ReplaceData(void* data, uint32_t byteCount = sizeof(T), uint32_t offset = 0) const {
-        glNamedBufferSubData(_ID, offset, byteCount, data);
+        glNamedBufferSubData(ID, offset, byteCount, data);
     }
 
     void Bind(uint32_t slot, BufferBindLocation bindLocation) const {
-        glBindBufferBase((GLenum) bindLocation, slot, _ID);
+        glBindBufferBase((GLenum) bindLocation, slot, ID);
     }
 };
 

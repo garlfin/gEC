@@ -13,8 +13,8 @@ class ShaderManager;
 
 class Shader : public Asset {
 public:
-    Shader(Window* window, const char*, const char*, ShaderManager* = nullptr); // Vertex, Fragment
-    Shader(Window* window, const char*, ShaderManager* = nullptr); // Compute
+    Shader(class Window* window, const char*, const char*, ShaderManager* = nullptr); // Vertex, Fragment
+    Shader(class Window* window, const char*, ShaderManager* = nullptr); // Compute
 
     ~Shader();
 

@@ -18,7 +18,7 @@ enum class ShaderType {
 
 class SubShader : public Asset {
 public:
-    SubShader(Window *window, const char *filePath, ShaderType type, ShaderManager *sManager);
+    SubShader(class Window *window, const char *filePath, ShaderType type, ShaderManager *sManager);
     ~SubShader();
 };
 

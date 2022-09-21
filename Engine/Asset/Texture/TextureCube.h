@@ -10,8 +10,8 @@
 
 class TextureCube : public Texture {
 public:
-    TextureCube(Window*, const char* const);
-    TextureCube(Window*, uint32_t, GLenum, uint8_t = 0);
+    TextureCube(class Window *window, const char *const path, bool genMips);
+    TextureCube(class Window*, uint32_t, GLenum, uint8_t = 0);
 };
 
 

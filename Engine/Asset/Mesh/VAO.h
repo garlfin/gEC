@@ -15,9 +15,9 @@ private:
     GLBuffer<glm::vec3> positions;
     GLBuffer<glm::uvec3> indices;
 public:
-    VAO(const Window* window);
-    ~VAO();
-    void Draw(uint32_t count) const;
+    VAO(const class Window* window);
+    virtual ~VAO();
+    virtual void Draw(uint32_t count) const;
 };
 
 #endif //IME_VAO_H
