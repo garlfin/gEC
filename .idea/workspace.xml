@@ -11,7 +11,8 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="iME" targetName="iME" />
+      <config projectName="iME" targetName="gEC" />
+      <config projectName="iME" targetName="gETF" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -21,25 +22,71 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Altered code style, pragma.">
+    <list default="true" id="ca936c84-37fb-4cb9-8235-b819ebf071e5" name="Changes" comment="Working towards implementing mesh loading">
+      <change afterPath="$PROJECT_DIR$/gEC/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Mesh/SkyboxVAO.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Mesh/VAO.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/Engine/Component/Managers/CameraManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/Engine/Component/Managers/CameraManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/Engine/Windowing/WindowState.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/sky.pvr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/skybox.frag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gEC/skybox.vert" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gETF/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gETF/Struct/Header.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gETF/Struct/IWriteable.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gETF/Struct/Mesh.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gETF/Struct/Vertex.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gETF/Struct/gETF.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gETF/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Asset.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Asset.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Misc/Math.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Misc/Math.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/default.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Asset.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Asset.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/AssetManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/AssetManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/GLBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/GLBuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Material/Shader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/Shader.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Material/Shader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/ShaderManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Material/ShaderManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/ShaderManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Material/ShaderManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Material/SubShader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Material/SubShader.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Material/SubShader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Mesh/SkyboxVAO.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Mesh/VAO.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Texture/Texture.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Texture/Texture.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Texture/Texture2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/Texture2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Texture/Texture2D.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Texture/TextureCube.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Asset/Texture/TextureCube.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Asset/Texture/TextureCube.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/Camera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/Camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Component.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/Component.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/Component.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/MeshRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/MeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/MeshRenderer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/Transform.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Components/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Components/Transform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Entity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/CameraManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Component/Managers/ComponentManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Component/Managers/ComponentManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Misc/Math.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Misc/Math.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/CameraData.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Struct/CameraData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/ObjectData.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Struct/ObjectData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/PVR.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Struct/PVR.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Struct/PVR.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Struct/PVR.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Windowing/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Windowing/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/Windowing/Window.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/glad.c" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/Engine/glad.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/glfw/glfw3.h" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/glfw/glfw3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/glm/ext/matrix_projection.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/glm/ext/matrix_projection.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/glm/ext/matrix_projection.inl" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/glm/ext/matrix_projection.inl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.frag" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/default.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.vert" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/default.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/include.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelly.pvr" beforeDir="false" afterPath="$PROJECT_DIR$/gEC/shelly.pvr" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +100,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CMakeLists.txt" />
         <option value="fs-template" />
+        <option value="CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -93,13 +140,13 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/scion/CLionProjects/iME",
+    "last_opened_file_path": "C:/Users/scion/CLionProjects/iME/CMakeLists.txt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.make",
     "structure.view.defaults.are.configured": "true"
   }
 }]]></component>
@@ -111,24 +158,33 @@
       <recent name="C:\Users\scion\CLionProjects\iME\cmake-build-debug" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\scion\CLionProjects\iME\Engine\Component\Components" />
-      <recent name="C:\Users\scion\CLionProjects\iME\Engine\Component\Managers" />
       <recent name="C:\Users\scion\CLionProjects\iME" />
-      <recent name="C:\Users\scion\CLionProjects\iME\Engine\Component" />
-      <recent name="C:\Users\scion\CLionProjects\iME\Engine\Asset\Texture" />
+      <recent name="C:\Users\scion\CLionProjects\iME\gEC" />
+      <recent name="C:\Users\scion\CLionProjects\iME\gETF" />
+      <recent name="C:\Users\scion\CLionProjects\iME\gETF\Struct" />
+      <recent name="C:\Users\scion\CLionProjects\iME\Engine\Component\Components" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="CMake Application.gEC">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="iME" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iME" TARGET_NAME="iME" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="iME" RUN_TARGET_NAME="iME">
+    <configuration name="gEC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iME" TARGET_NAME="gEC" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="iME" RUN_TARGET_NAME="gEC">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="gETF" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iME" TARGET_NAME="gETF" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="iME" RUN_TARGET_NAME="gETF">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.gEC" />
+      <item itemvalue="CMake Application.gETF" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -162,7 +218,10 @@
       <workItem from="1663246364433" duration="4620000" />
       <workItem from="1663338873557" duration="1322000" />
       <workItem from="1663547416395" duration="491000" />
-      <workItem from="1663689693587" duration="10217000" />
+      <workItem from="1663689693587" duration="10558000" />
+      <workItem from="1663770284401" duration="15000" />
+      <workItem from="1663773176319" duration="8338000" />
+      <workItem from="1663857447013" duration="17258000" />
     </task>
     <task id="LOCAL-00001" summary="Camera Shennanigans">
       <created>1662204922412</created>
@@ -213,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663696132847</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Working towards implementing mesh loading">
+      <created>1663770220118</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663770220118</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,20 +304,26 @@
     <MESSAGE value="File restructure, transform component" />
     <MESSAGE value="Fixes to RenderDoc compatability, added camera class." />
     <MESSAGE value="Altered code style, pragma." />
-    <option name="LAST_COMMIT_MESSAGE" value="Altered code style, pragma." />
+    <MESSAGE value="Working towards implementing mesh loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working towards implementing mesh loading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Asset/Material/Shader.h</url>
+          <url>file://$PROJECT_DIR$/gEC/Engine/Asset/Material/Shader.h</url>
           <line>15</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Component/Components/Camera.cpp</url>
-          <line>33</line>
+          <url>file://$PROJECT_DIR$/gEC/Engine/Component/Components/Camera.cpp</url>
+          <line>38</line>
           <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/gEC/Engine/Component/Components/MeshRenderer.h</url>
+          <line>6</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
